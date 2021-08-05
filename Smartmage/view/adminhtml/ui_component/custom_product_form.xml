@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<argument name="dataProvider" xsi:type="configurableObject">
+    <argument name="class" xsi:type="string">[YourNameSpace]\[YourModule]\Ui\DataProvider\[YourComponentName]DataProvider</argument>
+    <argument name="name" xsi:type="string">[YourComponentName]_data_source</argument>
+    <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+    <argument name="requestFieldName" xsi:type="string">id</argument>
+</argument>
+    <fieldset name="product_details">
+        <field name="product_count">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Ilość produktów</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">product</item>
+                    <item name="dataScope" xsi:type="string">productCount</item>
+                </item>
+            </argument>
+        </field>
+        <field name="product_price">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Cena produktu</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">product</item>
+                    <item name="dataScope" xsi:type="string">product_name</item>
+                </item>
+            </argument>
+        </field>
+        <field name="product_image" formElement="imageUploader">
+            <settings>
+                <notice translate="true">Some notice.</notice>
+                <label translate="true">Image Uploader Example</label>
+                <componentType>imageUploader</componentType>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg gif png</allowedExtensions>
+                        <maxFileSize>2097152</maxFileSize>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">Smartmage/page/upload</param>
+                        </uploaderConfig>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+        <field name="product_image_alt">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Image alt text</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">product</item>
+                    <item name="dataScope" xsi:type="string">product_image_alt</item>
+                </item>
+            </argument>
+        </field>
+        
+        <field name="product_image_title">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Image title</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">product</item>
+                    <item name="dataScope" xsi:type="string">product_image_title</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>
