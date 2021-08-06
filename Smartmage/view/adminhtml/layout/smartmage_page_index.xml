@@ -8,7 +8,7 @@
    <body>
        <referenceContainer name="content">
                <block class="Magento\Backend\Block\Template" template="Smartmage_Smartmage::helloworld.phtml"/>
-               <uiComponent name="custom_product_form"/>
+               <!-- <uiComponent name="custom_product_form"/> -->
        </referenceContainer>
    </body>
 </page>
