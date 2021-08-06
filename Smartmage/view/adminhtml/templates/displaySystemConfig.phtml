@@ -1,3 +1,4 @@
 <?php
 echo "pre-helper";
+$product = $block->getLayout()->createBlock('Magento\Catalog\Block\Product\ListProduct');
 echo $this->helper('Smartmage\Smartmage\Helper\Data')->getConfig('Smartmage-section/Smartmage_product_group/product_count');

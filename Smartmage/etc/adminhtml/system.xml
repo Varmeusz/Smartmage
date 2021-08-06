@@ -24,6 +24,7 @@
                  <field id="product_image" translate="label comment" type="image" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Product image</label>
                      <validate>required-entry</validate>
+                     <base_url type="media" scope_info="1">yourfolder</base_url>
                  </field>
                  <field id="product_image_alt" translate="label comment" type="text" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Product image alternative text</label>
@@ -53,16 +54,8 @@
                      <label>description tag</label>
                  </field>
                  <field id="meta-robots-tag" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-
-                     <label>robots tag</label>
-                    <formElements>
-                        <select>
-                            <settings>
-                                <options class="Smartmage\Smartmage\Model\Config\Source\Options"/>
-                            </settings>
-                        </select>
-                    </formElements>
-                 </field>
+                    <label>robots</label>
+                </field>
                  
              </group>
         </section>

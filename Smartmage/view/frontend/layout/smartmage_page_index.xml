@@ -9,8 +9,9 @@
             </action>
         </referenceBlock>
         <referenceBlock name="content">
-               <block class="Magento\Backend\Block\Template" template="Smartmage_Smartmage::helloworld.phtml"/>
-               <block class="Magento\Backend\Block\Template" template="Smartmage_Smartmage::displaySystemConfig.phtml"/>
+               <block name="helloworld" class="Magento\Framework\View\Element\Template" template="Smartmage_Smartmage::helloworld.phtml"/>
+               <!-- <block class="Magento\Backend\Block\Template" template="Smartmage_Smartmage::displaySystemConfig.phtml"/> -->
+               <block name="customblock" class="Smartmage\Smartmage\Block\CustomBlock" template="Smartmage_Smartmage::displaySystemConfig.phtml"/>
         </referenceBlock>
     </body>
 </page>

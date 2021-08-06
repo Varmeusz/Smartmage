@@ -7,6 +7,7 @@ use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
+use Magento\Cms\Model\BlockFactory;
 
 /**
  * Class Index
@@ -18,6 +19,8 @@ class Index implements HttpGetActionInterface
      */
     private $pageFactory;
 
+    protected $helperData;
+    
     /**
       * @var RequestInterface
       */
@@ -42,6 +45,9 @@ class Index implements HttpGetActionInterface
         $firstParam = $this->request->getParam('first_param', null);
         $secondParam = $this->request->getParam('second_param', null);
 
-        return $this->pageFactory->create();
+        $resultPage = $this->pageFactory->create();
+    
+
+        return $resultPage;
     }
 }
