@@ -41,10 +41,7 @@ class Index implements HttpGetActionInterface
      */
     public function execute()
     {
-        // Get the params that were passed from our Router
-        $firstParam = $this->request->getParam('first_param', null);
-        $secondParam = $this->request->getParam('second_param', null);
-
+        
         $resultPage = $this->pageFactory->create();
     
 

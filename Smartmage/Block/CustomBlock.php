@@ -2,17 +2,23 @@
 
 namespace Smartmage\Smartmage\Block;
 
+use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 use Magento\Framework\View\Element\Template\Context;
 use \Smartmage\Smartmage\Helper\Data;
+
 class CustomBlock extends \Magento\Framework\View\Element\Template
 {
 
     protected $helper;
+    protected $collectionFactory;
+
     public function __construct(
         Context $context,
-        Data $helper
+        Data $helper,
+        CollectionFactory $collectionFactory
     )
     {
+        $this->collectionFactory = $collectionFactory;
         $this->helper = $helper;
         parent::__construct($context);
     }
@@ -36,6 +42,30 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
             "productTitle" => $productImageTitle);
         return $productData;
     }
+    
+
+    public function getMyCollection()
+    {
+        $productCollection = $this->collectionFactory->create();
+        $productCollection->addAttributeToSelect(['name', 'price', 'image', 'qty']);
+        // $productCollection->addAttributeToFilter('name', array('like' => '%pack%'));
+        $productCollection->addAttributeToFilter('name', array('like' => '%firm%'));
+
+        // $productCollection->addAttributeToFilter('qty', array('gt' => '50'));
+        // $productCollection->addAttributeToFilter('qty', array('lt' => '10'));
+
+
+        
+        foreach($productCollection as $product)
+        {
+            echo 'Name = '.$product->getName().'<br>';
+            $images = $product->getMediaGalleryImages();
+            foreach($images as $image){
+                echo "<img src=\"".$image->getUrl()."\"/>";
+            }
+        }
+    }
+    
     public function getMyData()
     {
         return "Hello from custom block";

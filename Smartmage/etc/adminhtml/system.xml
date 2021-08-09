@@ -23,9 +23,9 @@
                  </field>
                  <field id="product_image" translate="label comment" type="image" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Product image</label>
-                     <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
-                    <upload_dir config="system/filesystem/smartmage" scope_info="1">smartmage/page</upload_dir>
-                    <base_url type="media" scope_info="1">smartmage/page</base_url>
+                     <backend_model>Smartmage\Smartmage\Model\Config\Backend\Image</backend_model>
+                    <!-- <upload_dir scope_info="1">image</upload_dir> -->
+                    <base_url type="media" scope_info="1">image</base_url>
                  </field>
                  <field id="product_image_alt" translate="label comment" type="text" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Product image alternative text</label>

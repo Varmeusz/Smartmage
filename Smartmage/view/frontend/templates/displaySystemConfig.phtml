@@ -3,5 +3,6 @@
 // echo $block->getMyData();
 $data = $block->getSmartmageProductData();
 echo $data["productPrice"];
-echo "<img src=\"".$data["productImage"]."\"/>";
-?>
+$imgurl = $block->getUrl("media/image/").$data['productImage'];
+echo "<img title=\"".$data["productTitle"]."\" src=\"".$imgurl."\" alt=\"".$data["productAlt"]."\"/>";
+echo $block->getMyCollection();

@@ -20,6 +20,7 @@
                <!-- <block name="helloworld" class="Magento\Framework\View\Element\Template" template="Smartmage_Smartmage::helloworld.phtml"/> -->
                <!-- <block class="Magento\Backend\Block\Template" template="Smartmage_Smartmage::displaySystemConfig.phtml"/> -->
                <block name="customblock" class="Smartmage\Smartmage\Block\CustomBlock" template="Smartmage_Smartmage::displaySystemConfig.phtml"/>
+               <!-- <block name="productslider" class="Smartmage\Smartmage\Block\ProductSlider" template="Smartmage_Smartmage::displayProducts.phtml"/> -->
 
         </referenceBlock>
     </body>
