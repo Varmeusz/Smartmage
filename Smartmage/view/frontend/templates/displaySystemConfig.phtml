@@ -1,4 +1,8 @@
 <?php
-echo "test";
-echo $block->getMyData();
-echo $block->getSmartmageProductData();
+// echo "test";
+// echo $block->getMyData();
+$data = $block->getSmartmageProductData();
+echo $data[0];
+echo "<img src=\"".$data[2]."\"/>";
+echo $this->getViewFileUrl('media/default/pants.jpg');
+?>

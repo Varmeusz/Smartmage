@@ -23,8 +23,9 @@
                  </field>
                  <field id="product_image" translate="label comment" type="image" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Product image</label>
-                     <validate>required-entry</validate>
-                     <base_url type="media" scope_info="1">yourfolder</base_url>
+                     <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/smartmage" scope_info="1">smartmage/page</upload_dir>
+                    <base_url type="media" scope_info="1">smartmage/page</base_url>
                  </field>
                  <field id="product_image_alt" translate="label comment" type="text" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Product image alternative text</label>
@@ -36,13 +37,10 @@
                  </field>
              </group>
         </section>
-         <tab id="smartmage-meta-tags" translate="label" sortOrder="110">
-             <label>Smartmage meta tags</label>
-         </tab>
          <section id="Smartmage-meta-section" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
              <class>separator-top</class>
              <label>Meta tags</label>
-             <tab>smartmage-meta-tags</tab>
+             <tab>Smartmage-tab</tab>
              <resource>Smartmage_Smartmage::acl_path</resource>
              <group id="smartmage-meta-groups" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                  <label>Smartmage</label>
@@ -50,7 +48,7 @@
                  <field id="meta-title-tag" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>title tag</label>
                  </field>
-                 <field id="meta-description-tag" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                 <field id="meta-description-tag" translate="label comment" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>description tag</label>
                  </field>
                  <field id="meta-robots-tag" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">

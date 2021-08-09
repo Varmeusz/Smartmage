@@ -3,6 +3,10 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+    
+     <referenceBlock name="head.additional">
+            <block name="metatags" class="Smartmage\Smartmage\Block\MetaTags" template="Smartmage_Smartmage::metaTags.phtml"/> 
+        </referenceBlock>
         <referenceBlock name="page.main.title">
             <action method="setPageTitle">
                 <argument translate="true" name="title" xsi:type="string">Smartmage page index route</argument>
@@ -12,6 +16,7 @@
                <block name="helloworld" class="Magento\Framework\View\Element\Template" template="Smartmage_Smartmage::helloworld.phtml"/>
                <!-- <block class="Magento\Backend\Block\Template" template="Smartmage_Smartmage::displaySystemConfig.phtml"/> -->
                <block name="customblock" class="Smartmage\Smartmage\Block\CustomBlock" template="Smartmage_Smartmage::displaySystemConfig.phtml"/>
+
         </referenceBlock>
     </body>
 </page>
