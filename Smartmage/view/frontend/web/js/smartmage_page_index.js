@@ -1,0 +1,1 @@
+console.log("Loaded smartmage_page_index.js...")

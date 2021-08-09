@@ -2,7 +2,10 @@
 
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-
+    <head>
+        <css src="Smartmage_Smartmage::css/smartmage_page_index.css"/>
+        <script src="Smartmage_Smartmage::js/smartmage_page_index.js"/>
+    </head>
     <body>
         <referenceBlock name="head.additional">
             <block name="metatags" class="Smartmage\Smartmage\Block\MetaTags" template="Smartmage_Smartmage::metaTags.phtml"/> 
