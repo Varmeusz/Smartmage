@@ -28,7 +28,12 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
         // "<p>Product count: " . $productCount . "</p>" .
         // "<p>Product price: " . $productPrice . "</p>" .
         // "<img src=".$productImage." alt=\"".strval($productImageAlt)."\" />";
-        $productData = array($productCount, $productPrice, $productImage, $productImageAlt, $productImageTitle);
+        $productData = array(
+            "productCount" => $productCount, 
+            "productPrice" => $productPrice, 
+            "productImage" => $productImage, 
+            "productAlt"   => $productImageAlt, 
+            "productTitle" => $productImageTitle);
         return $productData;
     }
     public function getMyData()
