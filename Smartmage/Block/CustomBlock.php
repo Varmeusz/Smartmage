@@ -65,7 +65,7 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
         $productCollection->addAttributeToFilter('price', array('lt' => $productPriceLimit));
         $productCollection->addAttributeToFilter('qty', array('gt' => $productQtyLimit));
         $productCollection->addAttributeToFilter('status', array('eq' => 1));
-        $productCollection->addAttributeToFilter('visibility', array('eq' => 4));
+        $productCollection->addAttributeToFilter('visibility', array('neq' => 1));
 
         echo "<br>".$productCollection->getSelect()."<br>";
         // $productCollection->addAttributeToFilter('qty', array('gt' => '50'));
