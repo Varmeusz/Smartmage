@@ -2,8 +2,8 @@
 // echo "test";
 // echo $block->getMyData();
 $data = $block->getSmartmageProductData();
-echo "<h3>Product Qty".$data["productCount"]."</h3>";
-echo "<h3>Product Price".$data["productPrice"]."</h3>";
+echo "<h3>Product Qty ".$data["productCount"]."</h3>";
+echo "<h3>Product Price ".$data["productPrice"]."</h3>";
 $imgurl = $block->getUrl("media/image/").$data['productImage'];
 echo "<img title=\"".$data["productTitle"]."\" src=\"".$imgurl."\" alt=\"".$data["productAlt"]."\"/>";
 echo $block->getMyCollection();

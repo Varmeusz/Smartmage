@@ -71,14 +71,15 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
 
 
         $count = 0;
+        $productData=array();
         foreach($productCollection as $product)
         {
             $imgurl = $this->getUrl();
             $imgPath = $imgurl."media/catalog/product".$product->getData("image");
-            echo "<div class='product-slider'>";
+            echo "<div class='product'>";
             echo "<h1>".$product->getName()."</h1>";
             echo "<h2>".$product->getData()["price"]."</h2>";
-            echo "<img src=\"".$imgPath."\"/>";
+            echo "<img class=\"myimg\" src=\"".$imgPath."\"/>";
             echo "</div>";
         }
     }

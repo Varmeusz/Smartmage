@@ -1,7 +1,6 @@
 * {
     color: red;
 }
-img {
-    width: 100% auto;
+.myimg {
     height: 30px !important;
 }
