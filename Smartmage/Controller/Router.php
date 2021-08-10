@@ -1,7 +1,6 @@
 <?php
-declare(strict_types=1);
 
-namespace ExampleCorp\RoutingExample\Controller;
+namespace Smartmage\Smartmage\Controller;
 
 use Magento\Framework\App\Action\Forward;
 use Magento\Framework\App\ActionFactory;
@@ -9,6 +8,7 @@ use Magento\Framework\App\ActionInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\App\RouterInterface;
+use \Smartmage\Smartmage\Helper\Data;
 
 /**
  * Class Router
@@ -25,6 +25,8 @@ class Router implements RouterInterface
      */
     private $response;
 
+    private $helper;
+
     /**
      * Router constructor.
      *
@@ -33,10 +35,13 @@ class Router implements RouterInterface
      */
     public function __construct(
         ActionFactory $actionFactory,
-        ResponseInterface $response
+        ResponseInterface $response,
+        Data $helper
     ) {
         $this->actionFactory = $actionFactory;
         $this->response = $response;
+        $this->helper = $helper;
+
     }
 
     /**
@@ -46,8 +51,9 @@ class Router implements RouterInterface
     public function match(RequestInterface $request): ?ActionInterface
     {
         $identifier = trim($request->getPathInfo(), '/');
+        $routeName = $this->helper->getConfig('Smartmage-section/Smartmage-route/smartmage-route');
 
-        if (strpos($identifier, 'smartmage_page') !== false) {
+        if (strpos($identifier, $routeName) !== false) {
             $request->setModuleName('smartmage');
             $request->setControllerName('page');
             $request->setActionName('index');
