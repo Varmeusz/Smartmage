@@ -2,7 +2,7 @@
 
 namespace Smartmage\Smartmage\Model\Config\Backend;
 
-class Image extends \Magento\Config\Model\Config\Backend\Image
+class Image extends \Magento\Config\Model\Config\Backend\File
 {
     /**
      * The tail part of directory path for uploading

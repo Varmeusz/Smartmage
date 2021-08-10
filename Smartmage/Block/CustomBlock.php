@@ -2,6 +2,7 @@
 
 namespace Smartmage\Smartmage\Block;
 
+use Magento\CatalogInventory\Helper\Stock;
 use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 use Magento\Framework\View\Element\Template\Context;
 use \Smartmage\Smartmage\Helper\Data;
@@ -20,6 +21,7 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
     {
         $this->collectionFactory = $collectionFactory;
         $this->helper = $helper;
+        // $this->stockFilter = $stockFilter;
         parent::__construct($context);
     }
 
@@ -46,11 +48,20 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
 
     public function getMyCollection()
     {
-        $productCollection = $this->collectionFactory->create();
-        $productCollection->addAttributeToSelect(['name', 'price', 'image', 'qty']);
+        $productCollection = $this->collectionFactory->create()
+        ->addAttributeToSelect('*')
+        ->joinField('qty',
+        'cataloginventory_stock_item',
+        'qty',
+        'product_id=entity_id',
+        '{{table}}.stock_id=1',
+        'left');
+
+        // $productCollection->getSelect()->joinLeft()
         // $productCollection->addAttributeToFilter('name', array('like' => '%pack%'));
         $productCollection->addAttributeToFilter('name', array('like' => '%firm%'));
-
+        $productCollection->addAttributeToFilter('price', array('lt' => 50));
+        echo "<br>".$productCollection->getSelect();
         // $productCollection->addAttributeToFilter('qty', array('gt' => '50'));
         // $productCollection->addAttributeToFilter('qty', array('lt' => '10'));
 
@@ -58,9 +69,11 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
         
         foreach($productCollection as $product)
         {
+            print_r($product->getData());
             echo 'Name = '.$product->getName().'<br>';
             $images = $product->getMediaGalleryImages();
             foreach($images as $image){
+                echo $image->getUrl();
                 echo "<img src=\"".$image->getUrl()."\"/>";
             }
         }
