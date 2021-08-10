@@ -59,9 +59,15 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
 
         // $productCollection->getSelect()->joinLeft()
         // $productCollection->addAttributeToFilter('name', array('like' => '%pack%'));
-        $productCollection->addAttributeToFilter('name', array('like' => '%firm%'));
-        $productCollection->addAttributeToFilter('price', array('lt' => 50));
-        echo "<br>".$productCollection->getSelect();
+        $productQtyLimit = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_count');
+        $productPriceLimit = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_price');
+        // $productCollection->addAttributeToFilter('name', array('like' => '%firm%'));
+        $productCollection->addAttributeToFilter('price', array('lt' => $productPriceLimit));
+        $productCollection->addAttributeToFilter('qty', array('gt' => $productQtyLimit));
+        $productCollection->addAttributeToFilter('status', array('eq' => 1));
+        $productCollection->addAttributeToFilter('visibility', array('eq' => 4));
+
+        echo "<br>".$productCollection->getSelect()."<br>";
         // $productCollection->addAttributeToFilter('qty', array('gt' => '50'));
         // $productCollection->addAttributeToFilter('qty', array('lt' => '10'));
 
@@ -69,13 +75,13 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
         
         foreach($productCollection as $product)
         {
-            print_r($product->getData());
+            // print_r($product->getData());
             echo 'Name = '.$product->getName().'<br>';
-            $images = $product->getMediaGalleryImages();
-            foreach($images as $image){
-                echo $image->getUrl();
-                echo "<img src=\"".$image->getUrl()."\"/>";
-            }
+            // $images = $product->getMediaGalleryImages();
+            // foreach($images as $image){
+            //     echo $image->getUrl();
+            //     echo "<img src=\"".$image->getUrl()."\"/>";
+            // }
         }
     }
     
