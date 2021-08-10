@@ -14,11 +14,15 @@
                  <label>Smartmage</label>
                  <attribute type="expanded">1</attribute>
                  <field id="product_count" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                     <label>Product count</label>
+                     <label>Product qty</label>
                      <validate>required-entry integer</validate>
                  </field>
                  <field id="product_price" translate="label comment" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Product price</label>
+                     <validate>required-entry integer</validate>
+                 </field>
+                 <field id="product_limit" translate="label comment" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                     <label>Product limit</label>
                      <validate>required-entry integer</validate>
                  </field>
                  <field id="product_image" translate="label comment" type="image" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">

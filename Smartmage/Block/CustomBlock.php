@@ -57,26 +57,25 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
         '{{table}}.stock_id=1',
         'left');
 
-        // $productCollection->getSelect()->joinLeft()
-        // $productCollection->addAttributeToFilter('name', array('like' => '%pack%'));
         $productQtyLimit = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_count');
         $productPriceLimit = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_price');
-        // $productCollection->addAttributeToFilter('name', array('like' => '%firm%'));
+        $productLimit = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_limit');
+
         $productCollection->addAttributeToFilter('price', array('lt' => $productPriceLimit));
         $productCollection->addAttributeToFilter('qty', array('gt' => $productQtyLimit));
         $productCollection->addAttributeToFilter('status', array('eq' => 1));
         $productCollection->addAttributeToFilter('visibility', array('neq' => 1));
-
+        $productCollection->setOrder('created_at', 'DESC');
+        $productCollection->setPageSize($productLimit);
         echo "<br>".$productCollection->getSelect()."<br>";
-        // $productCollection->addAttributeToFilter('qty', array('gt' => '50'));
-        // $productCollection->addAttributeToFilter('qty', array('lt' => '10'));
 
 
-        
+        $count = 0;
         foreach($productCollection as $product)
         {
-            // print_r($product->getData());
-            echo 'Name = '.$product->getName().'<br>';
+            print_r($product->getData());
+            echo $count.'Name = '.$product->getName().'<br>';
+            $count++;
             // $images = $product->getMediaGalleryImages();
             // foreach($images as $image){
             //     echo $image->getUrl();
