@@ -43,7 +43,6 @@ class Index implements HttpGetActionInterface
     {
         
         $resultPage = $this->pageFactory->create();
-    
 
         return $resultPage;
     }
