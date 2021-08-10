@@ -52,7 +52,6 @@ class Router implements RouterInterface
     {
         $identifier = trim($request->getPathInfo(), '/');
         $routeName = $this->helper->getConfig('Smartmage-section/Smartmage-route/smartmage-route');
-
         if (strpos($identifier, $routeName) !== false) {
             $request->setModuleName('smartmage');
             $request->setControllerName('page');
