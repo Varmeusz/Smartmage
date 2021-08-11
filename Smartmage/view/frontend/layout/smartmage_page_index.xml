@@ -2,7 +2,7 @@
 
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
-        layout="empty">
+        layout="1column">
     <head>
         <css src="Smartmage_Smartmage::css/smartmage_page_index.css"/>
         <script src="Smartmage_Smartmage::js/smartmage_page_index.js"/>
@@ -17,7 +17,10 @@
                 <argument translate="true" name="title" xsi:type="string">Smartmage page index route</argument>
             </action>
         </referenceBlock> -->
-        <referenceBlock name="content">
+        <referenceContainer name="cms">
+
+        </referenceContainer>
+        <referenceBlock name="content" display="true">
                <!-- <block name="helloworld" class="Magento\Framework\View\Element\Template" template="Smartmage_Smartmage::helloworld.phtml"/> -->
                <!-- <block class="Magento\Backend\Block\Template" template="Smartmage_Smartmage::displaySystemConfig.phtml"/> -->
                <block name="customblock" class="Smartmage\Smartmage\Block\CustomBlock" template="Smartmage_Smartmage::displaySystemConfig.phtml"/>

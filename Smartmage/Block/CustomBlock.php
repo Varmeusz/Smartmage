@@ -32,16 +32,14 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
         $productImage = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_image');
         $productImageAlt = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_image_alt');
         $productImageTitle = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_image_title');
-        // $productData = "<p>".$productImageTitle."</p>".
-        // "<p>Product count: " . $productCount . "</p>" .
-        // "<p>Product price: " . $productPrice . "</p>" .
-        // "<img src=".$productImage." alt=\"".strval($productImageAlt)."\" />";
+
         $productData = array(
             "productCount" => $productCount, 
             "productPrice" => $productPrice, 
             "productImage" => $productImage, 
             "productAlt"   => $productImageAlt, 
             "productTitle" => $productImageTitle);
+            
         return $productData;
     }
     
