@@ -24,7 +24,7 @@ class MetaTags extends \Magento\Framework\View\Element\Template
     
     public function setTags()
     {
-        $this->pageConfig->getTitle()->set(__($this->getTitleTag()));
+        // $this->pageConfig->getTitle()->set(__($this->getTitleTag()));
         $this->pageConfig->setRobots(__($this->getRobots()));
         $this->pageConfig->setDescription(__($this->getDescription()));
     }

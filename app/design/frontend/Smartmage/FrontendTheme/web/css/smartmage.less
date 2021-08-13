@@ -7,9 +7,20 @@
     // all: unset;
     background-color: @raki-bg;
     color: @raki-fg;
-    font-family: Panton;
+    
+    h2 {
+        font-family: Panton;
+        font-weight: bold;
+    }
+    
 
 }
+
+.P1 {
+    font-family: 'Roboto', sans-serif;
+
+}
+
 #maincontent {
     padding-left: 0px;
     padding-right: 0px;
@@ -19,8 +30,123 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-    // your code
+
+    .TextBoxTop {
+        padding-top: 60px;
+        padding-left: 31.5px;
+        padding-right: 32.5px;
+        padding-bottom: 48px;
+        h2 {
+            font-family: Panton;
+            font-size: 24px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            margin: 0;
+            padding-bottom: 24px;
+            line-height: 1.33;
+            letter-spacing: normal;
+            text-align: left;
+            color: #fff;
+          }
+    }   
     
+    .P1 {
+        opacity: 0.7;
+        font-family: Roboto;
+        font-size: 18px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.56;
+        letter-spacing: normal;
+        text-align: left;
+        color: #fff;
+      }
+      
+      .TextBoxMiddle {
+        padding-top: 48px;
+        padding-bottom: 48px;
+        padding-left: 31px;
+        padding-right: 32px;
+        h3 {
+            font-family: Panton;
+            font-size: 20px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.4;
+            letter-spacing: normal;
+            text-align: left;
+            color: #fff;
+            margin: 0;
+            padding-bottom: 16px;
+        }
+        .hspan {
+            font-family: Panton;
+            font-size: 24px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.33;
+            letter-spacing: normal;
+            text-align: left;
+            color: #fff;
+            margin: 0;
+            padding-bottom: 24px
+        }
+      }
+      .content {
+        padding-top: 60px;
+        padding-bottom: 56px;
+        padding-left: 32px;
+        padding-right: 32px;
+        h3 {
+            font-family: Panton;
+            font-size: 20px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.4;
+            letter-spacing: normal;
+            text-align: left;
+            color: #fff;
+            margin: 0;
+            padding-bottom: 16px;
+        }
+        .hspan {
+            font-family: Panton;
+            font-size: 24px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.33;
+            letter-spacing: normal;
+            text-align: left;
+            color: #fff;
+            margin: 0;
+            padding-bottom: 24px
+        }
+      }
+      .SmallImage {
+          height: 400px;
+          background-color: rgba(0,0,0,0.2);
+          overflow: hidden;
+          img {
+              transform: translateY(-30px);
+          }
+      }
+      .BigImage{
+          height: 500px;
+          background-color: rgba(0,0,0,0.2);
+          overflow:hidden;
+          img {
+              transform: translateY(-30px);
+          }
+      }
+      
+
+
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
