@@ -1,4 +1,4 @@
-<div class="raki-container">
+<div  id="raki" class="raki-container">
     <div class="TextBoxTop">
         <h2>Nowe rozwiązania, dopracowane w najmniejszym detalu</h2>
         <span class="P1"><strong>Nuptse EVO</strong> to raki wykonane z najlepszej jakości hartowanej stali zapewniającej odpowiednią wytrzymałość i sztywność. 12 długich zębów opartych na ramowej konstrukcji zapewnia świetną przyczepność w lodzie oraz twardym i zmrożonym śniegu. </span>
@@ -31,3 +31,15 @@
     </div>
 
 </div>
+<script>
+    // // <![CDATA
+    require([
+        'jquery',
+        'matchMedia',
+        'responsive'
+    ], function($, script){
+        $(".raki-container")[0];//[0].responsive();
+
+    })
+    // ]]>
+</script>
