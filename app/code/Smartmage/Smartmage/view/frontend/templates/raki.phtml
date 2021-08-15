@@ -1,45 +1,60 @@
-<div  id="raki" class="raki-container">
-    <div class="TextBoxTop">
-        <h2>Nowe rozwiązania, dopracowane w najmniejszym detalu</h2>
-        <span class="P1"><strong>Nuptse EVO</strong> to raki wykonane z najlepszej jakości hartowanej stali zapewniającej odpowiednią wytrzymałość i sztywność. 12 długich zębów opartych na ramowej konstrukcji zapewnia świetną przyczepność w lodzie oraz twardym i zmrożonym śniegu. </span>
-    </div>
-    <div class="BigImage">
-        <img src="<?php echo $this->getViewFileUrl('images/evo-bottom-min.jpg'); ?>" alt="test"  />
-    </div>
-    <div class="TextBoxMiddle">
-        <h3>Podkładki przeciwśnieżne</h3>
-        <div class="P1">
-            Climbing Technology zastosowało w nowej wersji Nuptse zupełnie nowe podkładki przeciwśnieżne. Użyty materiał jest bardzo odporny na mróz - nawet w bardzo niskich temperaturach zachowuje elastyczność dzięki czemu podkładki nie niszczą się i nie pękają. Dodatkowo sprężyste wytłoczenie jeszcze lepiej „odbija” śnieg zapewniając bezpieczeństwo.
+<div  data-mage-init='{"responsive":{"option": 1}}' id="raki" class="raki-container">
+    <div class="responsive-column">
+        <div class="TextBoxTop">
+            <h2>Nowe rozwiązania, dopracowane w najmniejszym detalu</h2>
+            <span class="P1"><strong>Nuptse EVO</strong> to raki wykonane z najlepszej jakości hartowanej stali zapewniającej odpowiednią wytrzymałość i sztywność. 12 długich zębów opartych na ramowej konstrukcji zapewnia świetną przyczepność w lodzie oraz twardym i zmrożonym śniegu. </span>
+        </div>
+        <div class="BigImage">
+            <div class="animation-div"></div>
+            <img src="<?php echo $this->getViewFileUrl('images/bottom-min.jpg'); ?>" alt="test"  />
+        </div>
+        <div class="TextBoxMiddle">
+            <h3>Podkładki przeciwśnieżne</h3>
+            <div class="P1">
+                Climbing Technology zastosowało w nowej wersji Nuptse zupełnie nowe podkładki przeciwśnieżne. Użyty materiał jest bardzo odporny na mróz - nawet w bardzo niskich temperaturach zachowuje elastyczność dzięki czemu podkładki nie niszczą się i nie pękają. Dodatkowo sprężyste wytłoczenie jeszcze lepiej „odbija” śnieg zapewniając bezpieczeństwo.
+            </div>
+        </div>
+        <div class="SmallImage">
+            <div class="animation-div"></div>
+            <img  src="<?php echo $this->getViewFileUrl("images/front-min.jpg"); ?>" />
+        </div>
+        <div class="TextBoxMiddle">
+            <h3>Szybkie zakładanie</h3>
+            <div class="P1">
+            Nowa wersja Nuptse posiada ulepszony system regulacji. Dodatkowa dźwignia sprawia, że łatwo i szybko możemy wyregulować rozmiar raków. Regulacji można dokonać poprzez uniesienie dźwigni blokady ponad łącznik i dopasowanie długości do buta. Dzięki temu możliwe jest wykonanie operacji nawet w rękawicach. Raki Nuptse EVO można regulować w bardzo dużym zakresie (36-47) dzięki dwustopniowemu ustawieniu łącznika.
+            </div>
+        </div>
+        <div class="SmallImage">
+            <div class="animation-div"></div>
+            <img  src="<?php echo $this->getViewFileUrl("images/back-min.jpg"); ?>" >
         </div>
     </div>
-    <div class="SmallImage">
-        <img  src="<?php echo $this->getViewFileUrl("images/evo-front-min.jpg"); ?>" />
-    </div>
-    <div class="TextBoxMiddle">
-        <h3>Szybkie zakładanie</h3>
-        <div class="P1">
-        Nowa wersja Nuptse posiada ulepszony system regulacji. Dodatkowa dźwignia sprawia, że łatwo i szybko możemy wyregulować rozmiar raków. Regulacji można dokonać poprzez uniesienie dźwigni blokady ponad łącznik i dopasowanie długości do buta. Dzięki temu możliwe jest wykonanie operacji nawet w rękawicach. Raki Nuptse EVO można regulować w bardzo dużym zakresie (36-47) dzięki dwustopniowemu ustawieniu łącznika.
-        </div>
-    </div>
-    <div class="SmallImage">
-        <img  src="<?php echo $this->getViewFileUrl("images/nuptse-evo-back-min.jpg"); ?>" >
-    </div>
-    <div class="content">
-        <span class="hspan">Ponad 27 600 polskich turystów wybrało raki Nuptse EVO</span>
-        <div class="P1">Na przestrzeni 10 lat raki Nuptse EVO zostały sprawdzane w boju przez polskich miłośników turystyki zimowej. Choć model w przeciągu tego czasu był kilkakrotnie ulepszany, nadal cieszy się ogromą popularnością.</div>
-        
-    </div>
-
+    <div class="responsive-column"></div>
 </div>
+<div class="raki-container">
+    <div class="responsive-column">
+        <div class="content">
+                <span class="hspan">Ponad 27 600 polskich turystów wybrało raki Nuptse EVO</span>
+                <div id="responsive-div" class="P1">Na przestrzeni 10 lat raki Nuptse EVO zostały sprawdzane w boju przez polskich miłośników turystyki zimowej. Choć model w przeciągu tego czasu był kilkakrotnie ulepszany, nadal cieszy się ogromą popularnością.</div>
+        </div>
+    </div>
+    
+    <div id="hidden-responsive-column" class="responsive-column">
+        <div class="content">
+
+        </div>
+    </div>
+</div>
+
 <script>
     // // <![CDATA
-    require([
-        'jquery',
-        'matchMedia',
-        'responsive'
-    ], function($, script){
-        $(".raki-container")[0];//[0].responsive();
+    // require([
+    //     'jquery',
+    //     'matchMedia',
+    //     'responsive'
+    // ], function($, script){
+    //     $(".raki-container")[0];//[0].responsive();
 
-    })
+    // })
     // ]]>
 </script>

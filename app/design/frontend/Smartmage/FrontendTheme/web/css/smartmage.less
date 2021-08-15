@@ -7,14 +7,39 @@
     // all: unset;
     background-color: @raki-bg;
     color: @raki-fg;
-    
-    h2 {
-        font-family: Panton;
-        font-weight: bold;
-    }
-    
-
+    display: flex;
 }
+
+.BigImage {
+    position: relative;
+}
+.SmallImage {
+    position: relative;
+}
+.animation-div{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color: @raki-bg;
+    z-index: 1;
+    transform: scale3d(1,0,1);
+    transform-origin: bottom;
+    animation-name: appear;
+    animation-duration: 1s;
+}
+
+@keyframes appear {
+    0% {
+        transform: scale3d(1,1,1);
+    }
+    100% {
+        transform: scale3d(1,0,1);
+    }
+}
+
+
 
 .P1 {
     font-family: 'Roboto', sans-serif;
@@ -23,7 +48,6 @@
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.56;
     letter-spacing: normal;
     text-align: left;
     color: #fff;
@@ -51,7 +75,6 @@
         font-stretch: normal;
         font-style: normal;
         margin: 0;
-        line-height: 1.33;
         letter-spacing: normal;
         text-align: left;
         color: #fff;
@@ -74,7 +97,6 @@
         font-weight: bold;
         font-stretch: normal;
         font-style: normal;
-        line-height: 1.33;
         letter-spacing: normal;
         text-align: left;
         color: #fff;
@@ -84,24 +106,11 @@
     
 }
 .content {
-    h3 {
-        font-family: Panton;
-        font-weight: bold;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.4;
-        letter-spacing: normal;
-        text-align: left;
-        color: #fff;
-        margin: 0;
-
-    }
     .hspan {
         font-family: Panton;
         font-weight: bold;
         font-stretch: normal;
         font-style: normal;
-        line-height: 1.33;
         letter-spacing: normal;
         text-align: left;
         color: #fff;
@@ -127,20 +136,24 @@
     .raki-container { 
         padding-left: 0px;
         padding-right: 0px;
+        padding-top: 60px;
+
     }
     .TextBoxTop {
-        padding-top: 60px;
         padding-left: 31.5px;
         padding-right: 32.5px;
         padding-bottom: 48px;
         h2 {
             font-size: 24px;
+            line-height: 1.33;
             padding-bottom: 24px;
           }
     }   
     
     .P1 {
         font-size: 18px;
+        line-height: 1.56;
+
       }
       
     .TextBoxMiddle {
@@ -148,31 +161,23 @@
     padding-bottom: 48px;
     padding-left: 31px;
     padding-right: 32px;
-    h3 {
-        font-size: 20px;
-        padding-bottom: 16px;
-        line-height: 1.4;
-        letter-spacing: normal;
-
-    }
-    .hspan {
-        font-size: 24px;
-        padding-bottom: 24px
-    }
-    }
-    .content {
-    padding-top: 60px;
-    padding-bottom: 56px;
-    padding-left: 32px;
-    padding-right: 32px;
         h3 {
             font-size: 20px;
             padding-bottom: 16px;
+            line-height: 1.4;
+            letter-spacing: normal;
+
         }
+    }
+    .content {
+        padding-bottom: 56px;
+        padding-left: 32px;
+        padding-right: 32px;
         .hspan {
             font-size: 24px;
-            padding-bottom: 24px
-    }
+            padding-bottom: 24px;
+            line-height: 1.33;
+        }
     }
     .SmallImage {
         height: 400px;
@@ -200,16 +205,18 @@
     .raki-container { 
         padding-left: 32px;
         padding-right: 33px;
+        padding-top: 60px;
+
     }
 
     .TextBoxTop {
-        padding-top: 60px;
         padding-left: 31px;
         padding-right: 31.5px;
         padding-bottom: 56px;
 
         h2 {
             font-size: 30px;
+            line-height: 1.33;
             padding-bottom: 24px;
           }
 
@@ -217,6 +224,7 @@
     
     .P1 {
         font-size: 18px;
+        line-height: 1.56;
       }
       
     .TextBoxMiddle {
@@ -226,28 +234,22 @@
         padding-right:  31.5px;
         h3 {
             font-size: 24px;
+            padding-bottom: 16px;
             line-height: 1.33;
             letter-spacing: 0.72px;
-            padding-bottom: 16px;
-        }
-        .hspan {
-            font-size: 24px;
-            padding-bottom: 24px
+
         }
     }
     .content {
-    padding-top: 60px;
-    padding-bottom: 56px;
-    padding-left: 32px;
-    padding-right: 32px;
-        h3 {
-            font-size: 20px;
-            padding-bottom: 16px;
-        }
+        padding-bottom: 56px;
+        padding-left: 32px;
+        padding-right: 32px;
         .hspan {
             font-size: 30px;
-            padding-bottom: 24px
-    }
+            padding-bottom: 24px;
+            line-height: 1.33;
+
+        }
     }
     .SmallImage {
         height: 400px;
@@ -286,10 +288,13 @@
         .raki-container { 
             padding-left: 48px;
             padding-right: 48px;
+            padding-top: 120px;
+
         }
+        
+        
     
         .TextBoxTop {
-            padding-top: 120px;
             padding-left: 40px;
             padding-right: 40px;
             padding-bottom: 80px;
@@ -324,34 +329,29 @@
             }
         }
         .content {
-        padding-top: 120px;
         padding-bottom: 56px;
         padding-left: 40px;
         padding-right: 40px;
-            h3 {
-                font-size: 20px;
-                padding-bottom: 16px;
-            }
             .hspan {
                 font-size: 36px;
                 line-height: 1.11;
                 padding-bottom: 40px
-        }
+            }
         }
         .SmallImage {
-            height: 400px;
+            height: 564px;
             background-color: rgba(0,0,0,0.2);
             overflow: hidden;
             img {
-                transform: translateY(-110px);
+                transform: translateY(-135px);
             }
         }
         .BigImage{
-            height: 600px;
+            height: 928px;
             background-color: rgba(0,0,0,0.2);
             overflow:hidden;
             img {
-                transform: translateY(-77px);
+                transform: translateY(-40px);
             }
         }
     }
@@ -361,17 +361,25 @@
 //  Desktop (style-l.css)
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-    // your code
-    .myproduct{
-        color: #aaa;
-    }
-}
+// .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+//     // your code
+//     .myproduct{
+//         color: #aaa;
+//     }
+// }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
     // your code
-    .myproduct{
-        color: #1aaa;
+    
+}
+
+
+& when (@media-target = 'mobile'), (@media-target = 'all') {
+    @media only screen and (max-width: 1439px) {
+        // styles for custom breakpoint below <= 1440 mobile screen
+        #hidden-responsive-column{
+            display: none;
+        }
     }
 }
 
@@ -379,5 +387,77 @@
     // your code
     .myproduct{
         color: #a1a;
+    }
+
+    .raki-container { 
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-top: 120px;
+
+    }
+    .responsive-column {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 50%;
+    }
+
+    .TextBoxTop {
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 80px;
+
+        h2 {
+            font-size: 36px;
+            padding-bottom: 40px;
+            line-height: 1.11;
+        }
+
+    }   
+    
+    .P1 {
+        font-size: 20px;
+        line-height: 1.6;
+      }
+      
+    .TextBoxMiddle {
+        padding-top:    80px;
+        padding-bottom: 80px;
+        padding-left:   40px;
+        padding-right:  40px;
+        h3 {
+            font-size: 24px;
+            line-height: 1.33;
+            letter-spacing: 0.72px;
+            padding-bottom: 16px;
+        }
+    }
+    .content {
+        padding-bottom: 56px;
+        padding-left: 40px;
+        padding-right: 40px;
+        .hspan {
+            font-size: 36px;
+            line-height: 1.11;
+            padding-bottom: 40px
+        }
+    }
+    #hidden-responsive-column{
+        display: block;
+    }
+    .SmallImage {
+        height: 564px;
+        background-color: rgba(0,0,0,0.2);
+        overflow: hidden;
+        img {
+            transform: translateY(-110px);
+        }
+    }
+    .BigImage{
+        height: 800px;
+        background-color: rgba(0,0,0,0.2);
+        overflow:hidden;
+        img {
+            transform: translateY(-77px);
+        }
     }
 }
