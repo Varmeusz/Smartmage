@@ -27,16 +27,17 @@ a.shipping {
 }
 
 .shipping-costs-modal-content {
-    max-width: 400px;
-    max-height: 400px;
+    max-width: 340px;
+    max-height: 536px;
     background-color: #FFFFFF;
     z-index: 6;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px 25px;
+    margin: 0px 18px;
     border-radius: 5px;
     box-shadow: 1px 2px 8px 0px black;
+    font-family: 'Montserrat', sans-serif;
     // border-style: solid;
     // border-width: thin;
     // & > * {
@@ -45,47 +46,72 @@ a.shipping {
 
     .big-x-button {
         position: relative;
-        bottom: 1.5rem;
-        width: 40px;
-        height: 40px;
+        bottom: 20px;
+        width: 39px;
+        height: 39px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-style: solid;
+        // border-style: solid;
         border-radius: 100%;
-        border-width: medium;
+        // border-width: medium;
         background-color: #ffffff;
         color: #d5b080;
-        border-color: #d5b080;
-        box-shadow: 0rem 0rem 0 0.4rem white;
+        // border-color: #d5b080;
+        // box-shadow: 0rem 0rem 0 0.4rem white;
+        box-shadow: 0 0 0 2px #fff, inset 0 0 0 2px #d4af7e;
         flex-shrink: 0;
     }
     #modal-confirm-button {
-        border-color: #419919;
-        color: #419919;
+        font-family: 'Montserrat', sans-serif;
+        width: 176px;
+        height: 42px;
+        font-size: 12px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 1px;
+        border-color: #7ed321;
+        color: #7ed321;
         background-color: #FFFFFF;
-        border-radius: 100px 100px;
-        height: 4rem;
+        border-radius: 21px;
         margin-top: 20px;
         transition: .3s;
     }
     #modal-confirm-button:hover {
-        background-color: #419919;
+        background-color: #7ed321;
         color: #FFFFFF;
         transition: .3s;
     }
     #modal-cancel-anchor {
-        margin-top: 20px;
-        margin-bottom: 10px;
-
-    }
-    .modal-text {
-        overflow-x: hidden;
-    }
-    a {
+        font-family: 'Montserrat', sans-serif;
         color: black;
         text-decoration: underline;
+        font-size: 14px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 29px;
+
     }
+
+    .modal-text {
+        padding: 0px 18px;
+        overflow-x: hidden;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.67;
+        letter-spacing: normal;
+        color: #353535;
+    }
+
     .modal-text {
         margin-top: 20px;
     }
