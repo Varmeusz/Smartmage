@@ -1,3 +1,7 @@
+
+a.shipping {
+    cursor: pointer;
+}
 .shipping-costs-modal {
     position: fixed;
     top: 0;
@@ -7,13 +11,25 @@
     height: 100%;
     background-color: rgba(0,0,0,0.4);
     overflow: auto;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadein .3s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .shipping-costs-modal-content {
-    position: relative;
+    max-width: 400px;
+    max-height: 400px;
     background-color: #FFFFFF;
-    margin: 15% 40% auto;
     z-index: 6;
     display: flex;
     flex-direction: column;
@@ -23,19 +39,26 @@
     box-shadow: 1px 2px 8px 0px black;
     // border-style: solid;
     // border-width: thin;
-    & > * {
-        margin-bottom: 3rem;
-    }
+    // & > * {
+    //     padding-bottom: 3rem;
+    // }
+
     .big-x-button {
         position: relative;
         bottom: 1.5rem;
-        height: 4rem;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-style: solid;
         border-radius: 100%;
         border-width: medium;
         background-color: #ffffff;
         color: #d5b080;
         border-color: #d5b080;
         box-shadow: 0rem 0rem 0 0.4rem white;
+        flex-shrink: 0;
     }
     #modal-confirm-button {
         border-color: #419919;
@@ -43,9 +66,28 @@
         background-color: #FFFFFF;
         border-radius: 100px 100px;
         height: 4rem;
+        margin-top: 20px;
+        transition: .3s;
+    }
+    #modal-confirm-button:hover {
+        background-color: #419919;
+        color: #FFFFFF;
+        transition: .3s;
+    }
+    #modal-cancel-anchor {
+        margin-top: 20px;
+        margin-bottom: 10px;
+
+    }
+    .modal-text {
+        overflow-x: hidden;
     }
     a {
         color: black;
         text-decoration: underline;
     }
+    .modal-text {
+        margin-top: 20px;
+    }
+    
 }

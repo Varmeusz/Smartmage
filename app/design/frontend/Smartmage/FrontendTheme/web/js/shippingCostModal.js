@@ -5,27 +5,29 @@ define(['jquery'], function($)
     let modal = document.getElementsByClassName("shipping-costs-modal")[0];
     let confirm = document.getElementById("modal-confirm-button");
     let cancel = document.getElementById("modal-cancel-anchor");
+    let body = document.getElementsByTagName("body")[0];
     bigx.addEventListener("click", (e) => {
         e.preventDefault();
         modal.style.display = "none";
+        body.style.overflow = "visible";
     })
     shipping.addEventListener("click", () => {
-        if(modal.style.display == "none")
-            modal.style.display = "block";
-        else
-            modal.style.display = "none";
+        modal.style.display = "flex";
+        body.style.overflow = "hidden";            
     })
     confirm.addEventListener("click", (e)=>{
         e.preventDefault();
         modal.style.display="none";
+        body.style.overflow="visible";
     })
     cancel.addEventListener("click", (e) => {
         modal.style.display="none";
+        body.style.overflow="visible";
     })
     return function(config, element)
     {
         // console.log("responsive");
-        $(element).style.display = "block";
+        // $(element).style.display = "block";
         // $ = $;
     }
 });
