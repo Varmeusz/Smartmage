@@ -1,7 +1,7 @@
 <?php
 // echo "test";
 // echo $block->getMyData();
-$data = $block->getSmartmageProductData();
+$data = $block->getMyCollection();
 // echo "<h3>Product Qty ".$data["productCount"]."</h3>";
 // echo "<h3>Product Price ".$data["productPrice"]."</h3>";
 // $imgurl = $block->getUrl("media/image/").$data['productImage'];
@@ -12,15 +12,20 @@ $data = $block->getSmartmageProductData();
 
 <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
+        <?php foreach($data as $product){
+            // $imgurl = $this->getUrl();
+            // $imgPath = $imgurl."media/catalog/product".$product["productImage"];
+            $imgPath = $product["productImage"];
+            $productName = $product["productTitle"];
+            $productPrice = $product["productPrice"];
+            echo "<div class=\"swiper-slide\">".
+            "<div class=\"star-review\"></div>".
+            "<img src=\"".$imgPath."\"/>".
+            "<div class='product-name'>".$productName."</div>".
+            "<div class='produt-price'>".$productPrice."</div>".
+            "</div>";
+        }
+        ?>
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -37,6 +42,7 @@ $data = $block->getSmartmageProductData();
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+        slidesPerView: 5,
         pagination: {
           el: ".swiper-pagination",
         },
