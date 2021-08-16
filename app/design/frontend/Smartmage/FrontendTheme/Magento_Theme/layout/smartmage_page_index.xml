@@ -3,7 +3,7 @@
     <head>
         <css src="css/smartmage.css"/>
         <!-- <remove src="css/styles-m.css"/> -->
-        <remove src="css/styles-l.css"/>
+        <!-- <remove src="css/styles-l.css"/> -->
 
     </head>
     
