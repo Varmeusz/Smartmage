@@ -1,0 +1,7 @@
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.form.content">
+            <block name="product.info.shippingcosts" after="product.info.addtocart" class="Magento\Framework\View\Element\Template" template="Smartmage_Smartmage::product_shippingcosts.phtml" />
+        </referenceContainer>        
+    </body>
+</page>
