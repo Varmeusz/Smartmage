@@ -4,7 +4,7 @@ define(['jquery', 'matchMedia'], function($, mediaCheck)
     "use strict";
 
     mediaCheck({
-        media: '(min-width: 1440px)',
+        media: '(min-width: 1024px)',
         // Switch to Desktop Version
         entry: function () {
             console.log("Switching to Desktop...")
