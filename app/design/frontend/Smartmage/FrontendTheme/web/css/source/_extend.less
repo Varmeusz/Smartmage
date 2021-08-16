@@ -1,0 +1,51 @@
+.shipping-costs-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    overflow: auto;
+    display: block;
+}
+
+.shipping-costs-modal-content {
+    position: relative;
+    background-color: #FFFFFF;
+    margin: 15% 40% auto;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 25px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 8px 0px black;
+    // border-style: solid;
+    // border-width: thin;
+    & > * {
+        margin-bottom: 3rem;
+    }
+    .big-x-button {
+        position: relative;
+        bottom: 1.5rem;
+        height: 4rem;
+        border-radius: 100%;
+        border-width: medium;
+        background-color: #ffffff;
+        color: #d5b080;
+        border-color: #d5b080;
+        box-shadow: 0rem 0rem 0 0.4rem white;
+    }
+    #modal-confirm-button {
+        border-color: #419919;
+        color: #419919;
+        background-color: #FFFFFF;
+        border-radius: 100px 100px;
+        height: 4rem;
+    }
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+}

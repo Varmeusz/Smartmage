@@ -1,13 +1,20 @@
 <a date-mage-init="" class="shipping" ><?php echo __("Shipping costs");?> </a>
-<div display="none" class="shipping-costs-modal">
-    <div class="modal-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla mauris dolor, tristique pharetra quam mollis at. Integer pretium pulvinar quam. Vivamus molestie nec elit quis efficitur. Nulla facilisi. Suspendisse rhoncus ultrices justo, nec lobortis justo faucibus lacinia. Suspendisse vel tincidunt odio. Nam justo lacus, porttitor ac lacus sit amet, aliquet ultricies lacus. Nunc vulputate tortor ac auctor pretium. Nam commodo non lorem ut eleifend. Suspendisse accumsan justo at metus pretium, fringilla bibendum eros facilisis. <br>Nulla tempus mi vitae urna ultrices facilisis.</div>
-    <button><?php echo __("Potwierdzam");?></button>
-    <a href="#"><?php echo __("Anuluj");?></a>
+<div style="display:none;" class="shipping-costs-modal">
+    <div class="shipping-costs-modal-content">
+        <button class="big-x-button">X</button>
+        <div class="modal-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla mauris dolor, tristique pharetra quam mollis at. Integer pretium pulvinar quam. Vivamus molestie nec elit quis efficitur. Nulla facilisi. Suspendisse rhoncus ultrices justo, nec lobortis justo faucibus lacinia. Suspendisse vel tincidunt odio. Nam justo lacus, porttitor ac lacus sit amet, aliquet ultricies lacus. Nunc vulputate tortor ac auctor pretium. Nam commodo non lorem ut eleifend. Suspendisse accumsan justo at metus pretium, fringilla bibendum eros facilisis. <br>Nulla tempus mi vitae urna ultrices facilisis.</div>
+        <button id="modal-confirm-button"><?php echo __("Potwierdzam");?></button>
+        <a id="modal-cancel-anchor" href="#"><?php echo __("Anuluj");?></a>
+    </div>
 </div>
 
 
 <script>
-    
+require([
+        'shippingCostModal'
+    ], function($){
+
+    })
 </script>
 
 
