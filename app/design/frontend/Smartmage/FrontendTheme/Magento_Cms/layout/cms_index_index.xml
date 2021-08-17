@@ -2,10 +2,12 @@
     <head>
         <css src="css/swiper-bundle.min.css"/>
         <css src="css/product-slider.css"/>
+        <css src="css/all.css"/>
     </head>
+    
     <body>
         <referenceBlock name="content" display="true" cacheable="false">
-            <container>
+            <container name="cms.index.productslider">
                 <block name="slider" class="Smartmage\Smartmage\Block\CustomBlock" template="Smartmage_Smartmage::displaySystemConfig.phtml"/>
             </container>  
         </referenceBlock>   

@@ -5,6 +5,7 @@ namespace Smartmage\Smartmage\Block;
 use Magento\CatalogInventory\Helper\Stock;
 use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 use Magento\Framework\View\Element\Template\Context;
+use Magento\Review\Model\ReviewFactory;
 use \Smartmage\Smartmage\Helper\Data;
 
 class CustomBlock extends \Magento\Framework\View\Element\Template
@@ -12,17 +13,25 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
 
     protected $helper;
     protected $collectionFactory;
+    protected $reviewFactory;
 
     public function __construct(
         Context $context,
         Data $helper,
-        CollectionFactory $collectionFactory
+        CollectionFactory $collectionFactory,
+        ReviewFactory $reviewFactory
     )
     {
         $this->collectionFactory = $collectionFactory;
         $this->helper = $helper;
+        $this->reviewFactory = $reviewFactory;
         // $this->stockFilter = $stockFilter;
         parent::__construct($context);
+    }
+
+    public function getRatingSummary($productId)
+    {
+        
     }
 
     public function getSmartmageProductData()
@@ -65,18 +74,23 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
         $productCollection->addAttributeToFilter('visibility', array('neq' => 1));
         $productCollection->setOrder('created_at', 'DESC');
         $productCollection->setPageSize($productLimit);
-        echo "<br>".$productCollection->getSelect()."<br>";
+        // echo "<br>".$productCollection->getSelect()."<br>";
 
 
         $count = 0;
         $productData=array();
         foreach($productCollection as $product)
         {
+            // print_r($product->getData());
+            // echo $product->getRatingSummary();
+            // $this->reviewFactory->create()->getEntitySummary($product2, )
             $imgurl = $this->getUrl();
             $imgPath = $imgurl."media/catalog/product".$product->getData("image");
             $productData[] = array(
                 "productPrice" => $product->getData()["price"], 
-                "productImage" => $imgPath, 
+                "productImage" => $imgPath,
+                "productLink" => $product->getProductUrl(),
+                "productRating" => $product->getRatingSummmary(),
                 "productTitle" => $product->getName());
             // echo "<div class='myproduct'>";
             // echo "<h1>".$product->getName()."</h1>";
