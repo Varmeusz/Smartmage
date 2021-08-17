@@ -170,7 +170,6 @@
         }
     }
     .content {
-        padding-bottom: 56px;
         padding-left: 32px;
         padding-right: 32px;
         .hspan {
@@ -241,7 +240,6 @@
         }
     }
     .content {
-        padding-bottom: 56px;
         padding-left: 32px;
         padding-right: 32px;
         .hspan {
@@ -329,9 +327,8 @@
             }
         }
         .content {
-        padding-bottom: 56px;
-        padding-left: 40px;
-        padding-right: 40px;
+            padding-left: 40px;
+            padding-right: 40px;
             .hspan {
                 font-size: 36px;
                 line-height: 1.11;
@@ -374,8 +371,9 @@
 & when (@media-target = 'mobile'), (@media-target = 'all') {
     @media only screen and (max-width: 1023px) {
         // styles for custom breakpoint below <= 1440 mobile screen
-        #hidden-responsive-column{
-            display: none;
+        .raki-container {
+            display: flex;
+            flex-direction: column;
         }
     }
 }
@@ -390,6 +388,8 @@
         padding-left: 60px;
         padding-right: 60px;
         padding-top: 120px;
+        display:flex;
+        flex-direction: row;
 
     }
     .responsive-column {
