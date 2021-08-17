@@ -156,18 +156,22 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-  // your code
+  .swiper-button-next, .swiper-button-prev {
+    display: none;
+  }
 }
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__l) {
-  .swiper-pagination-wrapper{
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .swiper-button-next, .swiper-button-prev {
     display: none;
   }
 }
 
 & when (@media-target = 'mobile'), (@media-target = 'all') {
   @media only screen and (max-width: 375px) {
-      // styles for custom breakpoint below <= 375px mobile screen
+    .swiper-button-next, .swiper-button-prev {
+      display: none;
+    }
   }
 }
 
@@ -177,8 +181,10 @@
 
 // This will add styles for tablet devices. When using native media-queries, we recommend wrapping your media-queries with media-width Magento mixins or media-target
 & when (@media-target = 'desktop'), (@media-target = 'all') {
-  @media only screen and (min-width: @screen__m) and (max-width: (@screen__xl - 1)) {
-      // styles for breakpoint >= 768px and < 1440px
+  @media only screen and (min-width: @screen__m) and (max-width: (@screen__l - 1)) {
+    .swiper-button-next, .swiper-button-prev {
+      display: none;
+    }
   }
 }
 
@@ -219,7 +225,16 @@
   .star-review{
     font-size: 9px;
   }
-  .swiper-pagination-wrapper{
-    display: flex;
+  .NOWOSCI{
+    font-family: "Geomanist";
+    font-size: 34px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #274060;
+    margin-bottom: 57px;
   }
 }
