@@ -12,9 +12,9 @@ $data = $block->getMyCollection();
 
 
 <?php
-//far fa-star empty star
 //fas fa-star full star
-//fas fa-star half star
+//fas fa-star-half-alt half star
+//far fa-star empty star
 ?>
 
 <div class="NOWOSCI">NOWOŚCI</div>
@@ -30,13 +30,13 @@ $data = $block->getMyCollection();
             echo "<div class=\"swiper-slide\">".
               "<a class=\"product-anchor-block\" href=\"".$productUrl."\">".
               "<div class=\"slider-left-align star-review\">
-                <i class=\"far fa-star\"></i>
-                <i class=\"far fa-star\"></i>
-                <i class=\"far fa-star\"></i>
-                <i class=\"far fa-star\"></i>
+                <i class=\"fas fa-star\"></i>
+                <i class=\"fas fa-star\"></i>
+                <i class=\"fas fa-star\"></i>
+                <i class=\"fas fa-star-half-alt\"></i>
                 <i class=\"far fa-star\"></i>
               </div>".
-              "<img src=\"".$imgPath."\"/>".
+              "<img class='slider-product-image' src=\"".$imgPath."\"/>".
               "<div class='slider-left-align product-name'>".$productName."</div>".
               "<div class='slider-left-align product-price'>".$productPrice."</div></a>".
             "</div>";

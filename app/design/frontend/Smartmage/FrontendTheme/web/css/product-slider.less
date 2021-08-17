@@ -5,7 +5,6 @@
 
 .swiper-container {
     width: 100%;
-    height: 100%;
   }
 
   .product-price {
@@ -52,10 +51,7 @@
   }
 
   .swiper-slide img {
-    display: block;
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
+
 
   }
 
@@ -83,10 +79,8 @@
   }
 
   .swiper-button-prev {
-    transform: rotate(
-      -180deg
-      );      
-      left:0;
+    transform: rotate(-180deg);      
+    left:0;
   }
   .product-anchor-block {
     color: black;
@@ -95,11 +89,8 @@
     &:visited,
     &:hover,
     &:active{
-      // color: black;
       text-decoration: none;
-      * {
-        // color: black;
-      }
+      
     }
 
   }
@@ -162,10 +153,53 @@
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-  .swiper-button-next, .swiper-button-prev {
-    display: none;
+  
+  .product-name {
+    font-family: "Geomanist";
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: normal;
+    color: #535353;
+  }
+  .product-price {
+    font-family: "Geomanist";
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.08;
+    letter-spacing: normal;
+
+  }
+  .slider-product-image{
+    padding-bottom: 1px;
+    display: block;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+  }
+  .star-review{
+    font-size: 9px;
+    opacity: 0.8;
+  }
+  .NOWOSCI{
+    font-family: "Geomanist";
+    font-size: 34px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #274060;
+    margin-bottom: 57px;
   }
 }
+
+
 
 & when (@media-target = 'mobile'), (@media-target = 'all') {
   @media only screen and (max-width: 375px) {
@@ -175,29 +209,109 @@
   }
 }
 
-//
-//  Tablet
-//  _____________________________________________
 
-// This will add styles for tablet devices. When using native media-queries, we recommend wrapping your media-queries with media-width Magento mixins or media-target
-& when (@media-target = 'desktop'), (@media-target = 'all') {
-  @media only screen and (min-width: @screen__m) and (max-width: (@screen__l - 1)) {
-    .swiper-button-next, .swiper-button-prev {
-      display: none;
-    }
-  }
-}
 
 //
 //  Desktop (style-l.css)
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-  // your code
+  
+  .product-name {
+    font-family: "Geomanist";
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: normal;
+    color: #535353;
+  }
+  .product-price {
+    font-family: "Geomanist";
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.08;
+    letter-spacing: normal;
+
+  }
+  .slider-product-image{
+    padding-bottom: 1px;
+    display: block;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+  }
+  .star-review{
+    font-size: 9px;
+    opacity: 0.8;
+  }
+  .NOWOSCI{
+    font-family: "Geomanist";
+    font-size: 34px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #274060;
+    margin-bottom: 57px;
+  }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+  .product-name {
+    font-family: "Geomanist";
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: normal;
+    color: #535353;
+  }
+  .product-price {
+    font-family: "Geomanist";
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.08;
+    letter-spacing: normal;
 
+  }
+  .slider-product-image{
+    padding-bottom: 1px;
+    display: block;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+  }
+  .star-review{
+    font-size: 9px;
+    opacity: 0.8;
+  }
+  .NOWOSCI{
+    font-family: "Geomanist";
+    font-size: 34px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #274060;
+    margin-bottom: 57px;
+  }
+}
+
+@media only screen and (max-width: @screen__xl) {
+  .swiper-button-next, .swiper-button-prev {
+    display: none;
+  }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
@@ -222,8 +336,17 @@
     letter-spacing: normal;
 
   }
+  .slider-product-image{
+    padding-bottom: 1px;
+    display: block;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+  }
   .star-review{
     font-size: 9px;
+    opacity: 0.8;
+    padding-bottom: 6px;
   }
   .NOWOSCI{
     font-family: "Geomanist";
