@@ -6,6 +6,11 @@ define(['jquery'], function($)
     let confirm = document.getElementById("modal-confirm-button");
     let cancel = document.getElementById("modal-cancel-anchor");
     let body = document.getElementsByTagName("body")[0];
+    let modalbg = document.getElementsByClassName("shipping-costs-modal")[0]
+    modalbg.addEventListener("click", (e)=>{
+        modalbg.style.display="none"; 
+        modalbg.style.overflow="visible";
+    })
     bigx.addEventListener("click", (e) => {
         e.preventDefault();
         modal.style.display = "none";
