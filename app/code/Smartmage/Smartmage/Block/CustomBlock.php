@@ -7,6 +7,7 @@ use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Review\Model\ReviewFactory;
 use \Smartmage\Smartmage\Helper\Data;
+use Magento\Framework\Pricing\PriceCurrencyInterface;
 
 class CustomBlock extends \Magento\Framework\View\Element\Template
 {
@@ -14,14 +15,17 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
     protected $helper;
     protected $collectionFactory;
     protected $reviewFactory;
+    protected $priceCurrency;
 
     public function __construct(
         Context $context,
         Data $helper,
         CollectionFactory $collectionFactory,
-        ReviewFactory $reviewFactory
+        ReviewFactory $reviewFactory,
+        PriceCurrencyInterface $priceCurrency
     )
     {
+        $this->priceCurrency = $priceCurrency;
         $this->collectionFactory = $collectionFactory;
         $this->helper = $helper;
         $this->reviewFactory = $reviewFactory;
@@ -32,6 +36,11 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
     public function getRatingSummary($productId)
     {
         
+    }
+
+    public function getFormatedPrice($amount)
+    {
+        return $this->priceCurrency->convertAndFormat($amount);
     }
 
     public function getSmartmageProductData()

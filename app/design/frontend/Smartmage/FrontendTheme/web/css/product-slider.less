@@ -2,11 +2,27 @@
 @import "source/_responsive.less";
 
 
-
+.slider-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.slider-container-center{
+  display: flex;
+  justify-content: center;
+}
 .swiper-container {
     width: 100%;
+    height: 100%;
+    overflow: visible;
   }
-
+.swiper-wrapper{
+  overflow-y: hidden;
+}
+.swiper-slider {
+  overflow-y: hidden;
+}
   .product-price {
     color: #274060;
     &:link,
@@ -26,6 +42,14 @@
     }
 
   }
+  .product-name {
+    color: #535353;
+    line-height: 16px;
+    margin: 0 0 5px;
+    overflow: hidden;
+    min-height: 32px;
+    max-height: 32px;
+  }
 
 
   
@@ -35,25 +59,36 @@
     background: #fff;
 
     /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
+    // display: -webkit-box;
+    // display: -ms-flexbox;
+    // display: -webkit-flex;
+    // display: flex;
+    // flex-direction: column;
+    // -webkit-box-pack: center;
+    // -ms-flex-pack: center;
+    // -webkit-justify-content: center;
+    // justify-content: center;
+    // -webkit-box-align: center;
+    // -ms-flex-align: center;
+    // -webkit-align-items: center;
+    // align-items: center;
+    display:flex;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
     align-items: center;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
   }
 
-  .swiper-slide img {
-
-
-  }
+ 
 
   .slider-left-align {
     align-self: flex-start;
@@ -82,6 +117,11 @@
     transform: rotate(-180deg);      
     left:0;
   }
+
+  .swiper-button-next {
+    right: 0;
+  }
+
   .product-anchor-block {
     color: black;
     text-decoration: none;
@@ -184,6 +224,7 @@
   .star-review{
     font-size: 9px;
     opacity: 0.8;
+    margin-bottom: 7px;
   }
   .NOWOSCI{
     font-family: "Geomanist";
@@ -220,12 +261,7 @@
   .product-name {
     font-family: "Geomanist";
     font-size: 13px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.23;
-    letter-spacing: normal;
-    color: #535353;
+
   }
   .product-price {
     font-family: "Geomanist";
@@ -247,6 +283,7 @@
   .star-review{
     font-size: 9px;
     opacity: 0.8;
+    margin-bottom: 6px;
   }
   .NOWOSCI{
     font-family: "Geomanist";
@@ -293,6 +330,7 @@
   .star-review{
     font-size: 9px;
     opacity: 0.8;
+    margin-bottom: 6px;
   }
   .NOWOSCI{
     font-family: "Geomanist";
@@ -316,13 +354,16 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
   // your code
+  .slider-container {
+    width: 50%;
+  }
   .product-name {
     font-family: "Geomanist";
     font-size: 13px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.23;
+    line-height: 16px;
     letter-spacing: normal;
     color: #535353;
   }
@@ -332,12 +373,16 @@
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.08;
+    line-height: 13px;
     letter-spacing: normal;
+    overflow-y: hidden;
 
   }
+  .swiper-container {
+    padding: 0px 39px;
+  }
   .slider-product-image{
-    padding-bottom: 1px;
+    padding-bottom: 13px;
     display: block;
     width: 180px;
     height: 180px;
@@ -346,7 +391,7 @@
   .star-review{
     font-size: 9px;
     opacity: 0.8;
-    padding-bottom: 6px;
+    margin-bottom: 6px;
   }
   .NOWOSCI{
     font-family: "Geomanist";
