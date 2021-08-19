@@ -68,7 +68,7 @@ $data = $block->getMyCollection();
           128: {
               slidesPerView: 1,
               slidesPerGroup: 1,
-              spaceBetween: 10
+              spaceBetween: 10,
             
           },
           360: {
@@ -100,7 +100,9 @@ $data = $block->getMyCollection();
         pagination: {
           el: ".swiper-pagination",
           slideToClickedSlide: true,
-          clickable: true
+          watchOverflow: true,
+          clickable: true,
+          type: "bullets"
         },
         simulateTouch: true,
         loop: true,

@@ -29,7 +29,7 @@
                <!-- <block class="Magento\Backend\Block\Template" template="Smartmage_Smartmage::displaySystemConfig.phtml"/> -->
                <!-- <block name="productslider" class="Smartmage\Smartmage\Block\ProductSlider" template="Smartmage_Smartmage::displayProducts.phtml"/> -->
 
-               <block name="slider" class="Smartmage\Smartmage\Block\CustomBlock" template="Smartmage_Smartmage::displaySystemConfig.phtml"/>
+               <!-- <block name="slider" class="Smartmage\Smartmage\Block\CustomBlock" template="Smartmage_Smartmage::displaySystemConfig.phtml"/> -->
         </referenceBlock>
     </body>
 </page>
