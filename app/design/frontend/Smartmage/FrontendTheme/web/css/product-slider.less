@@ -5,7 +5,10 @@
 .slider-container {
   display: flex;
   justify-content: center;
+  align-items:center;
   flex-direction: column;
+  position: relative;
+  
 }
 .slider-container-center{
   display: flex;
@@ -13,6 +16,7 @@
 }
 .swiper-container {
     width: 100%;
+    max-width: 1250px;
     height: 100%;
     overflow: hidden;
   }
@@ -21,6 +25,7 @@
 }
 .swiper-slider {
   // overflow-y: hidden;
+  max-width:200px;
 }
   .product-price {
     color: #274060;
@@ -49,6 +54,7 @@
     overflow: hidden;
     min-height: 32px;
     max-height: 32px;
+    font-size: 13px;
   }
 
 
@@ -103,7 +109,7 @@
     background-repeat: no-repeat;
     background-position: 100%;
     padding: 25px 14px;
-    top: 107px;
+    top: 50%;
     width: 10px;
     height: 14px;
     cursor: pointer;
@@ -227,7 +233,7 @@
     opacity: 0.8;
     margin-bottom: 7px;
   }
-  .NOWOSCI{
+  .slider-header{
     font-family: "Geomanist";
     font-size: 34px;
     font-weight: 900;
@@ -286,7 +292,7 @@
     opacity: 0.8;
     margin-bottom: 6px;
   }
-  .NOWOSCI{
+  .slider-header{
     font-family: "Geomanist";
     font-size: 34px;
     font-weight: 900;
@@ -333,7 +339,7 @@
     opacity: 0.8;
     margin-bottom: 6px;
   }
-  .NOWOSCI{
+  .slider-header{
     font-family: "Geomanist";
     font-size: 34px;
     font-weight: 900;
@@ -360,7 +366,7 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
   // your code
   .slider-container {
-    width: 50%;
+    width: 100%
   }
   .product-name {
     font-family: "Geomanist";
@@ -398,7 +404,7 @@
     opacity: 0.8;
     margin-bottom: 6px;
   }
-  .NOWOSCI{
+  .slider-header{
     font-family: "Geomanist";
     font-size: 34px;
     font-weight: 900;

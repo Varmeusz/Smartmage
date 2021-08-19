@@ -19,7 +19,7 @@ $data = $block->getMyCollection();
 
 <div class="slider-container-center">
   <div class="slider-container">
-    <div class="NOWOSCI">NOWOŚCI</div>
+    <div class="slider-header">NOWOŚCI</div>
     <div class="swiper-container mySwiper">
           <div class="swiper-wrapper">
             <?php foreach($data as $product){
@@ -45,10 +45,12 @@ $data = $block->getMyCollection();
             }
             ?>
           </div>
-          <div class="swiper-button-next"></div>
+          
+        </div>
+        <div class="swiper-pagination-wrapper"><div class="swiper-pagination"></div></div>
+        
+        <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
-    </div>
-  <div class="swiper-pagination-wrapper"><div class="swiper-pagination"></div></div>
   </div>
 </div>
 <script>
@@ -60,8 +62,15 @@ $data = $block->getMyCollection();
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+        slidesPerView:'auto',
         spaceBetween: 10,
         breakpoints: {
+          128: {
+              slidesPerView: 1,
+              slidesPerGroup: 1,
+              spaceBetween: 10
+            
+          },
           360: {
               slidesPerView: 2,
               slidesPerGroup: 2,
