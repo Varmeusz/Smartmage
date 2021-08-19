@@ -56,11 +56,6 @@ $data = $block->getMyCollection();
         'swiper', "matchMedia"
     ], function(swiper, mediaCheck){
         var productSwiper = new swiper(".mySwiper", {
-        cssMode: true,
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        observer: !0,
-        observeParents: !0,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -98,9 +93,12 @@ $data = $block->getMyCollection();
           slideToClickedSlide: true,
           clickable: true
         },
+        simulateTouch: true,
         loop: true,
         mousewheel: true,
         keyboard: true,
+        
+
       });
       window.productSwiper = productSwiper;
       mediaCheck({
