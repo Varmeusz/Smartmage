@@ -1,0 +1,49 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+<table name="sm_blog_post" resource="default" engine="innodb"
+           comment="Catalog Product Datetime Attribute Backend Table">
+    <column xsi:type="int" name="post_id" padding="11" unsigned="false" nullable="false" identity="true" comment="Blog ID"/>
+    <column xsi:type="varchar" name="identifier"  unsigned="true" nullable="false" identity="false" default="0" comment="Url ID"/>
+    <column xsi:type="varchar" name="title"  unsigned="true" nullable="false" identity="false" default="0" comment="Blog post title"/>
+    <column xsi:type="varchar" name="image"  unsigned="true" nullable="false" identity="false" default="0" comment="Blog post main image"/>
+    <column xsi:type="varchar" name="content"  nullable="false" comment="blog post content"/>
+    <column xsi:type="boolean" name="is_active"  nullable="false" comment="Is active"/>
+    <column xsi:type="datetime" name="created_at" nullable="false" comment="Blog post creation datetime"/>
+    <column xsi:type="datetime" name="updated_at"  nullable="false" comment="Blog post update datetime"/>
+    <column xsi:type="datetime" name="publish_time"  nullable="false" comment="Blog post publish datetime"/>
+
+
+
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+        <column name="post_id"/>
+    </constraint>
+</table>
+<table name="sm_blog_category" resource="default" engine="innodb" 
+        comment="Blog post categories">
+    <column xsi:type="int" name="category_id" padding="11" unsigned="false" nullable="false" identity="true" comment="Blog ID"/>
+    <column xsi:type="varchar" name="identifier"  unsigned="true" nullable="false" identity="false" default="0" comment="Url ID"/>
+    <column xsi:type="varchar" name="title"  unsigned="true" nullable="false" identity="false" default="0" comment="Blog post title"/>
+    <column xsi:type="boolean" name="is_active"  nullable="false" comment="Is active"/>
+    <column xsi:type="datetime" name="created_at" nullable="false" comment="Blog post creation datetime"/>
+    <column xsi:type="datetime" name="updated_at"  nullable="false" comment="Blog post update datetime"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+        <column name="category_id"/>
+    </constraint>
+</table>
+
+<table name="sm_blog_post_category" resource="default" engine="innodb" 
+        comment="Blog post - categories">
+    <column xsi:type="int" name="category" padding="11" unsigned="false" nullable="false" identity="false" comment="Blog ID"/>
+    <column xsi:type="int" name="post" padding="11" unsigned="false" nullable="false" identity="false" comment="Blog ID"/>
+    
+    <constraint xsi:type="foreign" referenceId="F_CATEGORY" table="sm_blog_post_category" 
+        column="category" referenceTable="sm_blog_category" referenceColumn="category_id" onDelete="CASCADE"/>
+    <constraint xsi:type="foreign" referenceId="F_POST" table="sm_blog_post_category" 
+        column="post" referenceTable="sm_blog_post" referenceColumn="post_id" onDelete="CASCADE"/>
+     
+    
+
+
+</table>
+</schema>
+
