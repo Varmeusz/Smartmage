@@ -22,6 +22,9 @@
   }
 .swiper-wrapper{
   // overflow-y: hidden;
+  max-height: 100%;
+  height: 100%;
+  display: flex;
 }
 .swiper-slider {
   // overflow-y: hidden;
@@ -63,29 +66,13 @@
     text-align: center;
     font-size: 18px;
     background: #fff;
-    // overflow-y: hidden;
-
-    /* Center slide text vertically */
-    // display: -webkit-box;
-    // display: -ms-flexbox;
-    // display: -webkit-flex;
-    // display: flex;
-    // flex-direction: column;
-    // -webkit-box-pack: center;
-    // -ms-flex-pack: center;
-    // -webkit-justify-content: center;
-    // justify-content: center;
-    // -webkit-box-align: center;
-    // -ms-flex-align: center;
-    // -webkit-align-items: center;
-    // align-items: center;
     display:flex;
     justify-content: center;
     align-items: center;
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
-    width: 100%;
+    width: auto;
     height: 100%;
     position: relative;
     -webkit-transition-property: -webkit-transform;
@@ -197,6 +184,9 @@
   .swiper-button-next, .swiper-button-prev {
     display: none;
   }
+  .product-anchor-block {
+    width: 160px;
+  }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
@@ -210,6 +200,7 @@
     line-height: 1.23;
     letter-spacing: normal;
     color: #535353;
+    max-width: 140px;
   }
   .product-price {
     font-family: "Geomanist";
@@ -268,6 +259,7 @@
   .product-name {
     font-family: "Geomanist";
     font-size: 13px;
+    max-width: 180px;
 
   }
   .product-price {
