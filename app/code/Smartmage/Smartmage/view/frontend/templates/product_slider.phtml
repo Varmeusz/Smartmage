@@ -64,6 +64,7 @@ $data = $block->getMyCollection();
         },
         slidesPerView:'auto',
         spaceBetween: 10,
+        watchOverflow: true,
         // centeredSlides: true,
         // centeredSlidesBounds: true,
         breakpoints: {
@@ -104,7 +105,9 @@ $data = $block->getMyCollection();
           slideToClickedSlide: true,
           watchOverflow: true,
           clickable: true,
-          type: "bullets"
+          type: "bullets",
+          // dynamicBullets: true,
+          // dynamicMainBullets: 5,
         },
         simulateTouch: true,
         loop: true,
