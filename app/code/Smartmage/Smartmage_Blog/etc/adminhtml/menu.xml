@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+   <menu>
+       <add id="Smartmage_Blog::menu"
+           title="Smartmage" module="Smartmage_Blog"
+           sortOrder="30"
+           resource="Magento_Backend::content"
+           />
+       <!-- START: new node -->  
+       <add id="Smartmage_Blog::menu_category"
+           title="Category" module="Smartmage_Blog"
+           sortOrder="10" parent="Smartmage_Blog::menu"
+           action="adminblog/blog/index"
+           resource="Smartmage_Blog::menu_category"
+           /> 
+       <!-- END:   new node -->
+       <!-- START: new node -->  
+       <!--
+       <add id="Smartmage_Blog::menu_post"
+           title="Post" module="Smartmage_Blog"
+           sortOrder="20" parent="Smartmage_Blog::menu"
+           resource="Smartmage_Blog::menu_post"
+           /> -->
+       <!-- END:   new node -->
+   </menu>
+</config>
