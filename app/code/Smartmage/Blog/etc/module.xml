@@ -3,5 +3,8 @@
     <module name="Smartmage_Blog" setup_version="0.0.1"> 
         <sequence>
             <module name="Magento_Catalog"/> </sequence>
+            <module name="Magento_Backend"/>
+            <module name="Magento_Ui" />
+            <module name="Magento_Theme"/>
         </module>
 </config>

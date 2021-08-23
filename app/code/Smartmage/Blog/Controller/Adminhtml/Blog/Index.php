@@ -48,4 +48,9 @@ class Index extends Action implements HttpGetActionInterface
 
         return $resultPage;
     }
+    
+    protected function _isAllowed()
+    {
+            return $this->_authorization->isAllowed('Smartmage_Blog::menu');
+    }
 }

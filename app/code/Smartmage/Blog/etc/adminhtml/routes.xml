@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="admin">
         <route id="admingblog" frontName="adminblog">
-            <module name="Smartmage_Blog"/>
+            <module name="Smartmage_Blog" before="Magento_Backend"/>
         </route>
     </router>
 </config>
