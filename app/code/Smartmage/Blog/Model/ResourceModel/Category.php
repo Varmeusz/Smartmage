@@ -1,10 +1,11 @@
 <?php
 namespace Smartmage\Blog\Model\ResourceModel;
 
-use Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult;
 
 
-class Category extends SearchResult
+class Category extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
-    
+    protected function _construct() {
+        $this->_init('sm_blog_category', 'category_id');
+    }
 }

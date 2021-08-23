@@ -3,10 +3,11 @@
 	<argument name="data" xsi:type="array">
 		<item name="js_config" xsi:type="array">
 			<item name="provider" xsi:type="string">adminblog_blog_category.adminblog_blog_category_data_source</item>
+            <item name="deps" xsi:type="string">adminblog_blog_category.adminblog_blog_category_data_source</item>
 		</item>
 	</argument>
 	<settings>
-		<spinner>adminblog_blog_category_columns</spinner>
+		<!-- <spinner>adminblog_blog_category_columns</spinner> -->
 		<!-- <deps>
 			<dep>adminblog_blog_category.adminblog_blog_category_data_source</dep>
 		</deps> -->
@@ -14,7 +15,7 @@
 			<button name="add">
 				<url path="*/*/new"/>
 				<class>primary</class>
-				<label translate="true">Add new Category</label>
+				<label translate="true">Add new category</label>
 			</button>
 		</buttons>
 	</settings>
@@ -25,7 +26,7 @@
 			</storageConfig>
 			<updateUrl path="mui/index/render"/>
 		</settings>
-		<dataProvider name="adminblog_blog_category_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+		<dataProvider name="adminblog_blog_category_data_source" class="Smartmage\Blog\Ui\DataProvider\Category\ListingDataProvider">
 			<settings>
 				<requestFieldName>category_id</requestFieldName>
 				<primaryFieldName>category_id</primaryFieldName>
