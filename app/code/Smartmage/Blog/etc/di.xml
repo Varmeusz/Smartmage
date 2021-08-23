@@ -11,4 +11,22 @@
          </arguments>
     </type>
     <!-- Admin theme. End -->
+
+   
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="adminblog_blog_category_data_source" xsi:type="string">CustomCollectionName</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="CustomCollectionName" type="Smartmage\Blog\Ui\DataProvider\Category\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sm_blog_category</argument>
+            <argument name="resourceModel" xsi:type="string">Smartmage\Blog\Model\ResourceModel\Category</argument>
+        </arguments>
+    </virtualType>
+    
 </config>
