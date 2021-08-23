@@ -8,6 +8,7 @@
     <body>
         <referenceContainer name="content">
             <block class="Magento\Backend\Block\Template" template="Smartmage_Blog::helloworld.phtml"/>
+            <!-- <block class="" -->
         </referenceContainer>
     </body>
 </page>

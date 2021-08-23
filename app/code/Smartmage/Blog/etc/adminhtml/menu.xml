@@ -18,9 +18,17 @@
        <!-- START: new node -->  
        <add id="Smartmage_Blog::menu_posts"
            title="Posts" module="Smartmage_Blog"
-           sortOrder="10" parent="Smartmage_Blog::sm_blog_menu"
+           sortOrder="11" parent="Smartmage_Blog::sm_blog_menu"
            action="adminblog/blog/post"
            resource="Smartmage_Blog::menu_posts"
+           /> 
+       <!-- END:   new node -->
+       <!-- START: new node -->  
+       <add id="Smartmage_Blog::blogindex"
+           title="Index" module="Smartmage_Blog"
+           sortOrder="12" parent="Smartmage_Blog::sm_blog_menu"
+           action="adminblog/blog/index"
+           resource="Smartmage_Blog::blogindex"
            /> 
        <!-- END:   new node -->
        <!-- START: new node -->  
