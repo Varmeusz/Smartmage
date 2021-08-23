@@ -68,7 +68,7 @@ class Actions extends Column
                             'label' => __('Edit')
                         ],
                         'remove' => [
-                            'href'  => $this->_urlBuilder->getUrl($this->$_deleteUrl, ['id' => $item['category_id']]),
+                            'href'  => $this->_urlBuilder->getUrl($this->_deleteUrl, ['id' => $item['category_id']]),
                             'target' => '_blank',
                             'label' => __('Delete')
                         ]
