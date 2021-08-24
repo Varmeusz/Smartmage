@@ -23,6 +23,8 @@ class Actions extends Column
      */
     protected $_deleteUrl;
 
+    protected $_context;
+
     /**
      * construct
      *
@@ -44,6 +46,9 @@ class Actions extends Column
         array $data = []
     ) {
         $this->_urlBuilder = $urlBuilder;
+        $this->_urlBuilder->setScope('admin');
+        $this->_context = $context;
+        
         $this->_editUrl    = $editUrl;
         $this->_deleteUrl  = $deleteUrl;
         parent::__construct($context, $uiComponentFactory, $components, $data);
@@ -63,12 +68,12 @@ class Actions extends Column
                 if (isset($item['post_id'])) {
                     $item[$this->getData('name')]   = [
                         'edit' => [
-                            'href'  => $this->_urlBuilder->getUrl($this->_editUrl, ['id' => $item['post_id']]),
+                            'href'  => $this->_context->getUrl($this->_editUrl, ['id' => $item['post_id']]),
                             'target' => '_blank',
                             'label' => __('Edit')
                         ],
                         'remove' => [
-                            'href'  => $this->_urlBuilder->getUrl($this->_deleteUrl, ['id' => $item['post_id']]),
+                            'href'  => $this->_context->getUrl($this->_deleteUrl, ['id' => $item['post_id']]),
                             'target' => '_blank',
                             'label' => __('Delete')
                         ]

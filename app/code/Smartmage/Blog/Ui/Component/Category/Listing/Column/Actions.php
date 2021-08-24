@@ -23,6 +23,8 @@ class Actions extends Column
      */
     protected $_deleteUrl;
 
+    protected $_context;
+
     /**
      * construct
      *
@@ -43,6 +45,7 @@ class Actions extends Column
         array $components = [],
         array $data = []
     ) {
+        $this->_context = $context;
         $this->_urlBuilder = $urlBuilder;
         $this->_editUrl    = $editUrl;
         $this->_deleteUrl  = $deleteUrl;
@@ -63,12 +66,12 @@ class Actions extends Column
                 if (isset($item['category_id'])) {
                     $item[$this->getData('name')]   = [
                         'edit' => [
-                            'href'  => $this->_urlBuilder->getUrl($this->_editUrl, ['id' => $item['category_id']]),
+                            'href'  => $this->_context->getUrl($this->_editUrl, ['id' => $item['category_id']]),
                             'target' => '_blank',
                             'label' => __('Edit')
                         ],
                         'remove' => [
-                            'href'  => $this->_urlBuilder->getUrl($this->_deleteUrl, ['id' => $item['category_id']]),
+                            'href'  => $this->_context->getUrl($this->_deleteUrl, ['id' => $item['category_id']]),
                             'target' => '_blank',
                             'label' => __('Delete')
                         ]
