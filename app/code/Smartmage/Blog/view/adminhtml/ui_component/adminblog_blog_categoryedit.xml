@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<argument name="data" xsi:type="array">
+<item name="js_config" xsi:type="array">
+<item name="provider" xsi:type="string">adminblog_blog_categoryedit.adminblog_blog_categoryedit_data_source</item>
+</item>
+<item name="label" xsi:type="string" translate="true">Information</item>
+<item name="config" xsi:type="array">
+<item name="dataScope" xsi:type="string">data</item>
+<item name="namespace" xsi:type="string">adminblog_blog_categoryedit</item>
+</item>
+<item name="template" xsi:type="string">templates/form/collapsible</item>
+</argument>
+<settings>
+       <!-- <buttons>
+           <button name="save" class="Magenest\MyForm\Block\Adminhtml\Form\Edit\SaveButton"/>
+           <button name="reset" class="Magenest\MyForm\Block\Adminhtml\Form\Edit\ResetButton"/>
+           <button name="delete" class="Magenest\MyForm\Block\Adminhtml\Form\Edit\DeleteButton"/>
+           <button name="back" class="Magenest\MyForm\Block\Adminhtml\Form\Edit\BackButton"/>
+       </buttons> -->
+       <namespace>adminblog_blog_categoryedit</namespace>
+       <dataScope>data</dataScope>
+       <deps>
+           <dep>adminblog_blog_categoryedit.adminblog_blog_categoryedit_data_source</dep>
+       </deps>
+   </settings>
+<dataSource name="adminblog_blog_categoryedit_data_source">
+       <argument name="data" xsi:type="array">
+           <item name="js_config" xsi:type="array">
+               <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+           </item>
+       </argument>
+       <settings>
+           <submitUrl path="magenest/myform/save"/>
+       </settings>
+     <dataProvider class="Smartmage\Blog\Ui\DataProvider\Category\ListingDataProvider" name="adminblog_blog_categoryedit_data_source">
+           <settings>
+               <requestFieldName>category_id</requestFieldName>
+               <primaryFieldName>category_id</primaryFieldName>
+           </settings>
+       </dataProvider>
+   </dataSource>
+
+<fieldset name="adminblog_blog_categoryedit_fieldset">
+<settings>
+   <collapsible>true</collapsible>
+   <label>Fieldset Label</label>
+</settings>
+<!-- This field represents form id and is hidden -->
+        <field name="category_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">category</item>
+                </item>
+            </argument>
+        </field>
+
+        <!-- This field has data type 'text' and standard 'input' form element and looks like input -->
+        <field name="identifier">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Identifier</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">category</item>
+                </item>
+            </argument>
+        </field>
+
+
+        <!-- This field has data type 'text' and standard 'input' form element and looks like input -->
+        <field name="title">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Title</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">category</item>
+                </item>
+            </argument>
+        </field>
+
+        
+        <field name="is_active">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Is active</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="source" xsi:type="string">category</item>
+                </item>
+            </argument>
+        </field>
+</fieldset>
+</form>

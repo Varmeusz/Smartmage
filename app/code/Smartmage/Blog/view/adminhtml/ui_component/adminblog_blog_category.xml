@@ -146,8 +146,8 @@
               <item name="indexField" xsi:type="string">category_id</item>
           </item>
        </argument>
-       <argument name="editUrl" xsi:type="string">adminblog/blog/category_edit</argument>
-       <argument name="deleteUrl" xsi:type="string">adminblog/blog/category_delete</argument>
+       <argument name="editUrl" xsi:type="string">adminblog/blog/categoryedit</argument>
+       <argument name="deleteUrl" xsi:type="string">adminblog/blog/categorydelete</argument>
     </actionsColumn>
   </columns>
 </listing>

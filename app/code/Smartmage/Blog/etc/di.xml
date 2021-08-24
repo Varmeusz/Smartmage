@@ -19,6 +19,7 @@
             <argument name="collections" xsi:type="array">
                 <item name="adminblog_blog_category_data_source" xsi:type="string">CustomCollectionName</item>
                 <item name="adminblog_blog_post_data_source" xsi:type="string">CustomCollectionNamePost</item>
+                <item name="adminblog_blog_categoryedit_data_source" xsi:type="string">CustomCollectionName</item>
             </argument>
         </arguments>
     </type>
