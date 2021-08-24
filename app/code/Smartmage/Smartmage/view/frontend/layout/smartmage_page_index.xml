@@ -21,7 +21,7 @@
             </action>
         </referenceBlock> -->
 
-        <referenceBlock name="content" display="true" cacheable="false">
+        <referenceBlock name="content" display="true" >
             <container>
                 <block name="raki" class="Magento\Framework\View\Element\Template" template="Smartmage_Smartmage::raki.phtml"/>
             </container>
