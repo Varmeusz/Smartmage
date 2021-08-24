@@ -126,7 +126,7 @@
 				<label translate="true">updated_at</label>
 			</settings>
 		</column>
-    <actionsColumn name="actions" class="Dev\Grid\Ui\Component\Category\Listing\Column\Actions" sortOrder="200">
+    <actionsColumn name="actions" class="Smartmage\Blog\Ui\Component\Category\Listing\Column\Actions" sortOrder="200">
        <argument name="data" xsi:type="array">
           <item name="config" xsi:type="array">
               <item name="resizeEnabled" xsi:type="boolean">false</item>
@@ -134,7 +134,8 @@
               <item name="indexField" xsi:type="string">category_id</item>
           </item>
        </argument>
-       <argument name="viewUrl" xsi:type="string">blog/category/view</argument>
+       <argument name="editUrl" xsi:type="string">blog/category/edit</argument>
+       <argument name="deleteUrl" xsi:type="string">blog/category/delete</argument>
     </actionsColumn>
   </columns>
 </listing>
