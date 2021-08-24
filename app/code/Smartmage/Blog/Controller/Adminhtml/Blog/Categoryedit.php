@@ -7,7 +7,7 @@ use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
-use Smartmage\Blog\Model\Category;
+use Smartmage\Blog\Model\CategoryFactory;
 
 /**
  * Class Post
@@ -20,6 +20,10 @@ class Categoryedit extends Action implements HttpGetActionInterface
      */
     protected $resultPageFactory;
 
+    protected $_categoryFactory;
+
+    private $coreRegistry;
+
     /**
      * Index constructor.
      *
@@ -28,10 +32,14 @@ class Categoryedit extends Action implements HttpGetActionInterface
      */
     public function __construct(
         Context $context,
-        PageFactory $resultPageFactory
+        PageFactory $resultPageFactory,
+        CategoryFactory $categoryFactory,
+        \Magento\Framework\Registry $coreRegistry
     ) {
         parent::__construct($context);
-
+        $this->coreRegistry = $coreRegistry;
+        $this->_categoryFactory = $categoryFactory;
+        
         $this->resultPageFactory = $resultPageFactory;
     }
 
@@ -43,8 +51,21 @@ class Categoryedit extends Action implements HttpGetActionInterface
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        // $resultPage->setActiveMenu("Smartmage_Blog::menu");
+        $rowId = (int)$this->getRequest()->getParam('id');
+        $rowData = '';
+        if ($rowId) {
+            $rowData = $this->_categoryFactory->create()->load($rowId);
+            if (!$rowData->getId()) {
+                $this->messageManager->addError(__('row data no longer exist.'));
+                $this->_redirect('adminblog/blog/category');
+            }
+        }
+        $this->coreRegistry->register('row_data', $rowData);
+        // echo "<pre>"; print_r($rowData->debug()); die("dead");
+        $title = $rowId ? __('Edit Review ') : __('Add Review');
+        $resultPage->getConfig()->getTitle()->prepend($title);
         return $resultPage;
+        // $resultPage->setActiveMenu("Smartmage_Blog::menu");
     }
     
     public function _isAllowed()

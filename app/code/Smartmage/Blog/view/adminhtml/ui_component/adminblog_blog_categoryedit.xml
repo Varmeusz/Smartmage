@@ -43,7 +43,7 @@
 
 <fieldset name="adminblog_blog_categoryedit_fieldset">
 <settings>
-   <collapsible>true</collapsible>
+   <collapsible>false</collapsible>
    <label>Fieldset Label</label>
 </settings>
 <!-- This field represents form id and is hidden -->
