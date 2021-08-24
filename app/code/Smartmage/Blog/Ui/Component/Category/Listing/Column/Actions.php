@@ -63,12 +63,12 @@ class Actions extends Column
                 if (isset($item['category_id'])) {
                     $item[$this->getData('name')]   = [
                         'edit' => [
-                            'href'  => $this->_urlBuilder->getUrl($this->_viewUrl, ['id' => $item['category_id']]),
+                            'href'  => $this->_urlBuilder->getUrl($this->_editUrl, ['id' => $item['category_id']]),
                             'target' => '_blank',
                             'label' => __('Edit')
                         ],
                         'remove' => [
-                            'href'  => $this->_urlBuilder->getUrl($this->_viewUrl, ['id' => $item['category_id']]),
+                            'href'  => $this->_urlBuilder->getUrl($this->$_deleteUrl, ['id' => $item['category_id']]),
                             'target' => '_blank',
                             'label' => __('Delete')
                         ]
