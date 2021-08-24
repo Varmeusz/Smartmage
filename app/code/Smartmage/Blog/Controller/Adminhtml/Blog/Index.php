@@ -8,24 +8,11 @@ use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
 
-/**
- * Class Post
- */
 class Index extends Action implements HttpGetActionInterface
 {
-    const MENU_ID = 'Smartmage_Blog::menu';
 
-    /**
-     * @var PageFactory
-     */
     protected $resultPageFactory;
 
-    /**
-     * Index constructor.
-     *
-     * @param Context $context
-     * @param PageFactory $resultPageFactory
-     */
     public function __construct(
         Context $context,
         PageFactory $resultPageFactory
@@ -35,19 +22,16 @@ class Index extends Action implements HttpGetActionInterface
         $this->resultPageFactory = $resultPageFactory;
     }
 
-    /**
-     * Load the page defined in view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml
-     *
-     * @return Page
-     */
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
+        $resultPage->setActiveMenu("Smartmage_Blog::menu");
+
         return $resultPage;
     }
     
     protected function _isAllowed()
     {
-            return $this->_authorization->isAllowed('Smartmage_Blog::menu');
+        return $this->_authorization->isAllowed('Smartmage_Blog::menu');
     }
 }

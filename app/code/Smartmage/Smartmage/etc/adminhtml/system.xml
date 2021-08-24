@@ -2,67 +2,67 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
      <system>
-         <tab id="Smartmage-tab" translate="label" sortOrder="110">
+         <tab id="Smartmage_tab" translate="label" sortOrder="110">
              <label>Smartmage</label>
          </tab>
-         <section id="Smartmage-section" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-             <class>separator-top</class>
+         <section id="Smartmage_section" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+             <class>separator_top</class>
              <label>Smartmage</label>
-             <tab>Smartmage-tab</tab>
+             <tab>Smartmage_tab</tab>
              <resource>Smartmage_Smartmage::acl_path</resource>
              <group id="Smartmage_product_group" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                  <label>Smartmage</label>
                  <attribute type="expanded">1</attribute>
                  <field id="product_count" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Product qty</label>
-                     <validate>required-entry integer</validate>
+                     <validate>required_entry integer</validate>
                  </field>
                  <field id="product_price" translate="label comment" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Product price</label>
-                     <validate>required-entry integer</validate>
+                     <validate>required_entry integer</validate>
                  </field>
                  <field id="product_limit" translate="label comment" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Product limit</label>
-                     <validate>required-entry integer</validate>
+                     <validate>required_entry integer</validate>
                  </field>
                  <field id="product_image" translate="label comment" type="image" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Product image</label>
                      <backend_model>Smartmage\Smartmage\Model\Config\Backend\Image</backend_model>
-                    <!-- <upload_dir scope_info="1">image</upload_dir> -->
+                    <!-- <!__ <upload_dir scope_info="1">image</upload_dir> __> -->
                     <base_url type="media" scope_info="1">image</base_url>
                  </field>
                  <field id="product_image_alt" translate="label comment" type="text" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Product image alternative text</label>
-                     <validate>required-entry</validate>
+                     <validate>required_entry</validate>
                  </field>
                  <field id="product_image_title" translate="label comment" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Product image title</label>
-                     <validate>required-entry</validate>
+                     <validate>required_entry</validate>
                  </field>
             </group>
-            <group id="Smartmage-route" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="Smartmage_route" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                  <label>Smartmage/page custom route</label>
                  <attribute type="expanded">1</attribute>
-                 <field id="smartmage-route" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                 <field id="smartmage_route" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>Smartmage/page route</label>
                  </field>
              </group>
         </section>
-         <section id="Smartmage-meta-section" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
-             <class>separator-top</class>
+         <section id="Smartmage_meta_section" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+             <class>separator_top</class>
              <label>Meta tags</label>
-             <tab>Smartmage-tab</tab>
+             <tab>Smartmage_tab</tab>
              <resource>Smartmage_Smartmage::acl_path</resource>
-             <group id="smartmage-meta-groups" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+             <group id="smartmage_meta_groups" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                  <label>Smartmage</label>
                  <attribute type="expanded">1</attribute>
-                 <field id="meta-title-tag" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                 <field id="meta_title_tag" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>title tag</label>
                  </field>
-                 <field id="meta-description-tag" translate="label comment" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                 <field id="meta_description_tag" translate="label comment" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                      <label>description tag</label>
                  </field>
-                 <field id="meta-robots-tag" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                 <field id="meta_robots_tag" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>robots</label>
                     <source_model>Smartmage\Smartmage\Model\Config\RobotSelect</source_model>
                 </field>

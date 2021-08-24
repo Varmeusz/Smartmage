@@ -33,11 +33,10 @@ class Categoryedit extends Action implements HttpGetActionInterface
     public function __construct(
         Context $context,
         PageFactory $resultPageFactory,
-        CategoryFactory $categoryFactory,
-        \Magento\Framework\Registry $coreRegistry
+        CategoryFactory $categoryFactory
+
     ) {
         parent::__construct($context);
-        $this->coreRegistry = $coreRegistry;
         $this->_categoryFactory = $categoryFactory;
         
         $this->resultPageFactory = $resultPageFactory;
@@ -50,8 +49,12 @@ class Categoryedit extends Action implements HttpGetActionInterface
      */
     public function execute()
     {
+
         $resultPage = $this->resultPageFactory->create();
+        $resultPage->setActiveMenu("Smartmage_Blog::menu");
+
         $rowId = (int)$this->getRequest()->getParam('id');
+
         $rowData = '';
         if ($rowId) {
             $rowData = $this->_categoryFactory->create()->load($rowId);
@@ -60,12 +63,10 @@ class Categoryedit extends Action implements HttpGetActionInterface
                 $this->_redirect('adminblog/blog/category');
             }
         }
-        $this->coreRegistry->register('row_data', $rowData);
         // echo "<pre>"; print_r($rowData->debug()); die("dead");
         $title = $rowId ? __('Edit Review ') : __('Add Review');
         $resultPage->getConfig()->getTitle()->prepend($title);
         return $resultPage;
-        // $resultPage->setActiveMenu("Smartmage_Blog::menu");
     }
     
     public function _isAllowed()

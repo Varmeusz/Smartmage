@@ -12,12 +12,12 @@
 <item name="template" xsi:type="string">templates/form/collapsible</item>
 </argument>
 <settings>
-       <!-- <buttons>
-           <button name="save" class="Magenest\MyForm\Block\Adminhtml\Form\Edit\SaveButton"/>
-           <button name="reset" class="Magenest\MyForm\Block\Adminhtml\Form\Edit\ResetButton"/>
+       <buttons>
+           <button name="save" class="Smartmage\Blog\Block\Adminhtml\Blog\Category\Form\Edit\SaveButton"/>
+           <!-- <button name="reset" class="Magenest\MyForm\Block\Adminhtml\Form\Edit\ResetButton"/>
            <button name="delete" class="Magenest\MyForm\Block\Adminhtml\Form\Edit\DeleteButton"/>
-           <button name="back" class="Magenest\MyForm\Block\Adminhtml\Form\Edit\BackButton"/>
-       </buttons> -->
+           <button name="back" class="Magenest\MyForm\Block\Adminhtml\Form\Edit\BackButton"/> -->
+       </buttons>
        <namespace>adminblog_blog_categoryedit</namespace>
        <dataScope>data</dataScope>
        <deps>
@@ -31,7 +31,7 @@
            </item>
        </argument>
        <settings>
-           <submitUrl path="magenest/myform/save"/>
+           <submitUrl path="adminblog/blog/categorysave"/>
        </settings>
      <dataProvider class="Smartmage\Blog\Ui\DataProvider\Category\ListingDataProvider" name="adminblog_blog_categoryedit_data_source">
            <settings>
