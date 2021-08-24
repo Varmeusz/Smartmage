@@ -15,7 +15,7 @@ class Collection extends SearchResult
     protected function _initSelect()
     {
         // $this->addFilterToMap('category_id', 'main_table.category_id');
-        // $this->addFilterToMap('title', 'sm_blog_category.title');
+        $this->addFilterToMap('created_at', 'main_table.created_at');
         parent::_initSelect();
     }
 }
