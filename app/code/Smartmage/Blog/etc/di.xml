@@ -30,7 +30,7 @@
         </arguments>
     </virtualType>
 
-    <virtualType name="CustomCollectionNamePost" type="Smartmage\Blog\Ui\DataProvider\Blog\Collection">
+    <virtualType name="CustomCollectionNamePost" type="Smartmage\Blog\Ui\DataProvider\Post\Collection">
         <arguments>
             <argument name="mainTable" xsi:type="string">sm_blog_post</argument>
             <argument name="resourceModel" xsi:type="string">Smartmage\Blog\Model\ResourceModel\Post</argument>
