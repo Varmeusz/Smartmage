@@ -79,6 +79,19 @@
     <paging name="listing_paging"/>
   </listingToolbar>
   <columns name="adminblog_blog_post_columns">
+  
+   <settings>
+         <childDefaults>
+               <param name="fieldAction" xsi:type="array">
+                  <item name="provider" xsi:type="string">adminblog_blog_post.adminblog_blog_post.adminblog_blog_post_columns.actions</item>
+                  <item name="target" xsi:type="string">applyAction</item>
+                  <item name="params" xsi:type="array">
+                     <item name="0" xsi:type="string">edit</item>
+                     <item name="1" xsi:type="string">${ $.$data.rowIndex }</item>
+                  </item>
+               </param>
+         </childDefaults>
+      </settings>
     <selectionsColumn name="ids">
        <argument name="data" xsi:type="array">
            <item name="config" xsi:type="array">
@@ -144,7 +157,7 @@
 				<label translate="true">publish_time</label>
 			</settings>
 		</column>
-    <!-- <actionsColumn name="actions" class="Dev\Grid\Ui\Component\Category\Listing\Column\Actions" sortOrder="200">
+    <actionsColumn name="actions" class="Smartmage\Blog\Ui\Component\Post\Listing\Column\Actions" sortOrder="200">
        <argument name="data" xsi:type="array">
           <item name="config" xsi:type="array">
               <item name="resizeEnabled" xsi:type="boolean">false</item>
@@ -152,7 +165,8 @@
               <item name="indexField" xsi:type="string">post_id</item>
           </item>
        </argument>
-       <argument name="viewUrl" xsi:type="string">blog/category/view</argument>
-    </actionsColumn> -->
+       <argument name="editUrl" xsi:type="string">adminblog/post/edit</argument>
+       <argument name="deleteUrl" xsi:type="string">adminblog/post/delete</argument>
+    </actionsColumn>
   </columns>
 </listing>

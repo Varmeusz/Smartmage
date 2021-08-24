@@ -79,6 +79,18 @@
     <paging name="listing_paging"/>
   </listingToolbar>
   <columns name="adminblog_blog_category_columns">
+   <settings>
+         <childDefaults>
+               <param name="fieldAction" xsi:type="array">
+                  <item name="provider" xsi:type="string">adminblog_blog_category.adminblog_blog_category.adminblog_blog_category_columns.actions</item>
+                  <item name="target" xsi:type="string">applyAction</item>
+                  <item name="params" xsi:type="array">
+                     <item name="0" xsi:type="string">edit</item>
+                     <item name="1" xsi:type="string">${ $.$data.rowIndex }</item>
+                  </item>
+               </param>
+         </childDefaults>
+      </settings>
     <selectionsColumn name="ids">
        <argument name="data" xsi:type="array">
            <item name="config" xsi:type="array">
@@ -134,8 +146,8 @@
               <item name="indexField" xsi:type="string">category_id</item>
           </item>
        </argument>
-       <argument name="editUrl" xsi:type="string">blog/category/edit</argument>
-       <argument name="deleteUrl" xsi:type="string">blog/category/delete</argument>
+       <argument name="editUrl" xsi:type="string">adminblog/category/edit</argument>
+       <argument name="deleteUrl" xsi:type="string">adminblog/category/delete</argument>
     </actionsColumn>
   </columns>
 </listing>
