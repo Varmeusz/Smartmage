@@ -7,10 +7,7 @@
 		</item>
 	</argument>
 	<settings>
-		<!-- <spinner>adminblog_blog_post_columns</spinner> -->
-		<!-- <deps>
-			<dep>adminblog_blog_post.adminblog_blog_post_data_source</dep>
-		</deps> -->
+		<spinner>adminblog_blog_post_columns</spinner>
 		<buttons>
 			<button name="add">
 				<url path="*/*/new"/>
@@ -52,6 +49,7 @@
 			<settings>
 				<filter>text</filter>
 				<label translate="true">post_id</label>
+                <sortOrder></sortOrder>
 			</settings>
 		</column>
 		<column name="identifier">
