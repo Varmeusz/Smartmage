@@ -27,8 +27,8 @@ class Options implements \Magento\Framework\Option\ArrayInterface
 
         foreach($collection as $category) {
             $options[] =[
-                'label' => $collection->getTitile(),
-                'value' => $collection->getId()
+                'label' => $category->getTitle(),
+                'value' => $category->getId()
             ];
         }
 
