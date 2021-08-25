@@ -30,6 +30,7 @@ class CategorySave extends \Magento\Backend\App\Action
         $categoryId = $this->getRequest()->getParam('id');
         // echo $categoryId; die("XD");
         $data = (array)$this->getRequest()->getPostValue();
+        
         $datenow = date('Y-m-d H:i:s');
         if($categoryId){
             $data['category_id'] = $categoryId;

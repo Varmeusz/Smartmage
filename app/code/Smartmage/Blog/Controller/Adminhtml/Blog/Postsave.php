@@ -29,6 +29,7 @@ class PostSave extends \Magento\Backend\App\Action
         $resultRedirect = $this->resultRedirectFactory->create();
         $postId = $this->getRequest()->getParam('id');
         $data = (array)$this->getRequest()->getPostValue();
+        // print_r($data); die("XD");
         $datenow = date('Y-m-d H:i:s');
         if($postId){
             $data['post_id'] = $postId;
