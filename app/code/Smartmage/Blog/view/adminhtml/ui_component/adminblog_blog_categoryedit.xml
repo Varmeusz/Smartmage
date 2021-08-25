@@ -14,9 +14,9 @@
 <settings>
        <buttons>
            <button name="save" class="Smartmage\Blog\Block\Adminhtml\Blog\Category\Form\Edit\SaveButton"/>
-           <!-- <button name="reset" class="Magenest\MyForm\Block\Adminhtml\Form\Edit\ResetButton"/>
-           <button name="delete" class="Magenest\MyForm\Block\Adminhtml\Form\Edit\DeleteButton"/>
-           <button name="back" class="Magenest\MyForm\Block\Adminhtml\Form\Edit\BackButton"/> -->
+           <!-- <button name="reset" class="Smartmage\Blog\Block\Adminhtml\Form\Edit\ResetButton"/> -->
+           <!-- <button name="delete" class="Smartmage\Blog\Block\Adminhtml\Form\Edit\DeleteButton"/> -->
+           <button name="back" class="Smartmage\Blog\Block\Adminhtml\Blog\Category\Form\Edit\BackButton"/>
        </buttons>
        <namespace>adminblog_blog_categoryedit</namespace>
        <dataScope>data</dataScope>
