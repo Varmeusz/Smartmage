@@ -17,7 +17,7 @@
   </argument>
   <dataSource name="adminblog_blog_post_data_source">
    <argument name="dataProvider" xsi:type="configurableObject">
-       <argument name="class" xsi:type="string">Smartmage\Blog\Ui\DataProvider\Post\ListingDataProvider</argument>
+       <argument name="class" xsi:type="string">\Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
        <argument name="name" xsi:type="string">adminblog_blog_post_data_source</argument>
        <argument name="primaryFieldName" xsi:type="string">post_id</argument>
        <argument name="requestFieldName" xsi:type="string">post_id</argument>

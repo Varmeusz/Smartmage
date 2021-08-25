@@ -33,9 +33,9 @@
        <settings>
            <submitUrl path="adminblog/blog/postsave"/>
        </settings>
-     <dataProvider class="Smartmage\Blog\Ui\DataProvider\Post\ListingDataProvider" name="adminblog_blog_postedit_data_source">
+     <dataProvider class="Smartmage\Blog\Model\Post\DataProvider" name="adminblog_blog_postedit_data_source">
            <settings>
-               <requestFieldName>post_id</requestFieldName>
+               <requestFieldName>id</requestFieldName>
                <primaryFieldName>post_id</primaryFieldName>
            </settings>
        </dataProvider>
@@ -47,16 +47,18 @@
    <label>Fieldset Label</label>
 </settings>
 <!-- This field represents form id and is hidden -->
-        <!-- <field name="post_id">
+        <field name="post_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="visible" xsi:type="boolean">false</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">adminblog_blog_postedit</item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit_data_source</item>
+                    <item name="dataScope" xsi:type="string">post_id</item>
+
                 </item>
             </argument>
-        </field> -->
+        </field>
 
         <!-- This field has data type 'text' and standard 'input' form element and looks like input -->
         <field name="identifier">
@@ -66,7 +68,8 @@
                     <item name="visible" xsi:type="boolean">true</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">adminblog_blog_postedit</item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit_data_source</item>
+                    <item name="dataScope" xsi:type="string">identifier</item>
                 </item>
             </argument>
         </field>
@@ -80,7 +83,9 @@
                     <item name="visible" xsi:type="boolean">true</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">adminblog_blog_postedit</item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit_data_source</item>
+                    <item name="dataScope" xsi:type="string">title</item>
+
                 </item>
             </argument>
         </field>
@@ -93,7 +98,9 @@
                     <item name="visible" xsi:type="boolean">true</item>
                     <item name="dataType" xsi:type="string">image</item>
                     <item name="formElement" xsi:type="string">image</item>
-                    <item name="source" xsi:type="string">adminblog_blog_postedit</item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit_data_source</item>
+                    <item name="dataScope" xsi:type="string">image</item>
+
                 </item>
             </argument>
         </field>
@@ -123,7 +130,7 @@
                     <item name="dataScope" xsi:type="string">content</item>
                     <item name="rows" xsi:type="number">16</item>
 
-                    <item name="source" xsi:type="string">adminblog_blog_postedit</item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit_data_source</item>
                 </item>
             </argument>
         </field>
@@ -139,7 +146,8 @@
                         <item name="true" xsi:type="string">1</item>
                         <item name="false" xsi:type="string">0</item>
                     </item>
-                    <item name="source" xsi:type="string">adminblog_blog_postedit</item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit_data_source</item>
+                    <item name="dataScope" xsi:type="string">is_active</item>
                 </item>
             </argument>
         </field>

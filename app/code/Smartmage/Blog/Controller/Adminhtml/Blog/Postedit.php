@@ -8,6 +8,7 @@ use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
 use Smartmage\Blog\Model\PostFactory;
+use Magento\Framework\App\Request\DataPersistorInterface;
 
 /**
  * Class Post
@@ -24,6 +25,7 @@ class Postedit extends Action implements HttpGetActionInterface
 
     private $coreRegistry;
 
+    private $dataPersistorInterface;
     /**
      * Index constructor.
      *
@@ -33,12 +35,14 @@ class Postedit extends Action implements HttpGetActionInterface
     public function __construct(
         Context $context,
         PageFactory $resultPageFactory,
-        PostFactory $postFactory
+        PostFactory $postFactory,
+        DataPersistorInterface $dataPersistorInterface
 
     ) {
         parent::__construct($context);
         $this->_postFactory = $postFactory;
         $this->resultPageFactory = $resultPageFactory;
+        $this->dataPersistorInterface = $dataPersistorInterface;
     }
 
     /**
@@ -55,14 +59,17 @@ class Postedit extends Action implements HttpGetActionInterface
         $rowId = (int)$this->getRequest()->getParam('id');
 
         if ($rowId) {
-            $rowData = $this->_postFactory->create()->load($rowId,"post_id");
+            $rowData = $this->_postFactory->create();
+            $rowData->load($rowId);
             // echo "<pre>"; print_r($rowData->debug()); die("dead");
 
             if (!$rowData->getId()) {
                 $this->messageManager->addError(__('row data no longer exist.'));
                 $this->_redirect('adminblog/blog/post');
             }
-            
+            // $this->_coreRegistry->register('smartmage_blog_sm_blog_post', $rowData);
+            // print_r($rowData->toArray());
+            $this->dataPersistorInterface->set("mypost", $rowData->toArray());
         }
         $title = $rowId ? __('Edit Post ') : __('Add Post');
         $resultPage->getConfig()->getTitle()->prepend($title);
