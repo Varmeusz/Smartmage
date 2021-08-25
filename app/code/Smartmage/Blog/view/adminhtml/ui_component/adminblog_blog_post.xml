@@ -165,8 +165,8 @@
               <item name="indexField" xsi:type="string">post_id</item>
           </item>
        </argument>
-       <argument name="editUrl" xsi:type="string">adminblog/post/edit</argument>
-       <argument name="deleteUrl" xsi:type="string">adminblog/post/delete</argument>
+       <argument name="editUrl" xsi:type="string">adminblog/blog/postedit</argument>
+       <argument name="deleteUrl" xsi:type="string">adminblog/blog/postdelete</argument>
     </actionsColumn>
   </columns>
 </listing>
