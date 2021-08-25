@@ -47,16 +47,16 @@
    <label>Fieldset Label</label>
 </settings>
 <!-- This field represents form id and is hidden -->
-        <field name="category_id">
+        <!-- <field name="category_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="visible" xsi:type="boolean">false</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">adminblog_blog_categoryedit</item>
                 </item>
             </argument>
-        </field>
+        </field> -->
 
         <!-- This field has data type 'text' and standard 'input' form element and looks like input -->
         <field name="identifier">
@@ -93,6 +93,10 @@
                     <item name="visible" xsi:type="boolean">true</item>
                     <item name="dataType" xsi:type="string">boolean</item>
                     <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="string">1</item>
+                        <item name="false" xsi:type="string">0</item>
+                    </item>
                     <item name="source" xsi:type="string">adminblog_blog_categoryedit</item>
                 </item>
             </argument>

@@ -31,13 +31,12 @@ class CategorySave extends \Magento\Backend\App\Action
             $data = (array)$this->getRequest()->getPostValue();
             $model = $this->_categoryFactory->create();
             $datenow = date('Y-m-d H:i:s');
-            $data['category_id']  = 10;
-            $data['identifier'] = "testidentifier";
-            $data['title'] = "testtitle";
+            $data['category_id']  = null;
             $data['is_active'] = true;
             $data['created_at'] = $datenow;
             $data['updated_at'] = $datenow;
-            $model->setData($data)->save();
+            $model->setData($data);
+            $this->category->save($model);
             $this->messageManager->addSuccessMessage(__("Data Saved Successfully."));
 
         } catch (\Exception $e) {
