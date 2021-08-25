@@ -8,34 +8,18 @@ use Smartmage\Blog\Model\ResourceModel\Category\CollectionFactory;
 
 class Categorymassdelete extends \Magento\Backend\App\Action
 {
-    /**
-     * @var Filter
-     */
     protected $filter;
 
-    /**
-     * @var CollectionFactory
-     */
     protected $collectionFactory;
 
 
-    /**
-     * @param Context $context
-     * @param Filter $filter
-     * @param CollectionFactory $collectionFactory
-     */
-    public function __construct(Context $context, Filter $filter, CollectionFactory $collectionFactory)
+    public function __construct(Context $context, Filter $filter, CategoryFactory $collectionFactory)
     {
         parent::__construct($context, $filter);
         $this->filter = $filter;
         $this->collectionFactory = $collectionFactory;
     }
-    /**
-     * Execute action
-     *
-     * @return \Magento\Backend\Model\View\Result\Redirect
-     * @throws \Magento\Framework\Exception\LocalizedException|\Exception
-     */
+
     public function execute()
     {
         $collection = $this->filter->getCollection($this->collectionFactory->create());
@@ -46,7 +30,6 @@ class Categorymassdelete extends \Magento\Backend\App\Action
 
         $this->messageManager->addSuccess(__('A total of %1 record(s) have been deleted.', $collectionSize));
 
-        /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
         return $resultRedirect->setPath('*/*/category');
     }

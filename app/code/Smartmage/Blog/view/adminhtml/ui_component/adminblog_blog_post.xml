@@ -9,9 +9,9 @@
      <item name="buttons" xsi:type="array">
         <item name="add" xsi:type="array">
            <item name="name" xsi:type="string">add</item>
-           <item name="label" xsi:type="string">View Category Tree</item>
+           <item name="label" xsi:type="string">Add new post</item>
            <item name="class" xsi:type="string">primary</item>
-           <item name="url" xsi:type="string">adminblob/blog/add_post</item>
+           <item name="url" xsi:type="string">adminblog/blog/postedit</item>
         </item>
      </item>
   </argument>

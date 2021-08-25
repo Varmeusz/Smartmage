@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<argument name="data" xsi:type="array">
+    <item name="js_config" xsi:type="array">
+    <item name="provider" xsi:type="string">adminblog_blog_postedit.adminblog_blog_postedit_data_source</item>
+    </item>
+    <item name="label" xsi:type="string" translate="true">Information</item>
+    <item name="config" xsi:type="array">
+    <item name="dataScope" xsi:type="string">data</item>
+    <item name="namespace" xsi:type="string">adminblog_blog_postedit</item>
+    </item>
+    <item name="template" xsi:type="string">templates/form/collapsible</item>
+</argument>
+<settings>
+       <!-- <buttons> -->
+           <!-- <button name="save" class="Smartmage\Blog\Block\Adminhtml\Blog\Post\Form\Edit\SaveButton"/> -->
+           <!-- <button name="reset" class="Smartmage\Blog\Block\Adminhtml\Form\Edit\ResetButton"/> -->
+           <!-- <button name="delete" class="Smartmage\Blog\Block\Adminhtml\Form\Edit\DeleteButton"/> -->
+           <!-- <button name="back" class="Smartmage\Blog\Block\Adminhtml\Blog\Post\Form\Edit\BackButton"/> -->
+       <!-- </buttons> -->
+       <namespace>adminblog_blog_postedit</namespace>
+       <dataScope>data</dataScope>
+       <deps>
+           <dep>adminblog_blog_postedit.adminblog_blog_postedit_data_source</dep>
+       </deps>
+   </settings>
+<dataSource name="adminblog_blog_postedit_data_source">
+       <argument name="data" xsi:type="array">
+           <item name="js_config" xsi:type="array">
+               <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+           </item>
+       </argument>
+       <settings>
+           <submitUrl path="adminblog/blog/postsave"/>
+       </settings>
+     <dataProvider class="Smartmage\Blog\Ui\DataProvider\Post\ListingDataProvider" name="adminblog_blog_postedit_data_source">
+           <settings>
+               <requestFieldName>post_id</requestFieldName>
+               <primaryFieldName>post_id</primaryFieldName>
+           </settings>
+       </dataProvider>
+   </dataSource>
+
+<fieldset name="adminblog_blog_postedit_fieldset">
+<settings>
+   <collapsible>false</collapsible>
+   <label>Fieldset Label</label>
+</settings>
+<!-- This field represents form id and is hidden -->
+        <!-- <field name="post_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit</item>
+                </item>
+            </argument>
+        </field> -->
+
+        <!-- This field has data type 'text' and standard 'input' form element and looks like input -->
+        <field name="identifier">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Identifier</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit</item>
+                </item>
+            </argument>
+        </field>
+
+
+        <!-- This field has data type 'text' and standard 'input' form element and looks like input -->
+        <field name="title">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Title</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="image">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Image</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">image</item>
+                    <item name="formElement" xsi:type="string">image</item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit</item>
+                </item>
+            </argument>
+        </field>
+
+        
+        <field name="content">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Content</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="formElement" xsi:type="string">wysiwyg</item>
+                    <item name="wysiwygConfigData" xsi:type="array">
+                        <item name="height" xsi:type="string">100px</item>
+                        <item name="add_variables" xsi:type="boolean">true</item>
+                        <item name="add_widgets" xsi:type="boolean">true</item>
+                        <item name="add_images" xsi:type="boolean">true</item>
+                        <item name="add_directives" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit</item>
+                </item>
+            </argument>
+        </field>
+        
+        <field name="is_active">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Is active</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="string">1</item>
+                        <item name="false" xsi:type="string">0</item>
+                    </item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit</item>
+                </item>
+            </argument>
+        </field>
+</fieldset>
+</form>
