@@ -55,15 +55,16 @@ class Categoryedit extends Action implements HttpGetActionInterface
 
         $rowId = (int)$this->getRequest()->getParam('id');
 
-        $rowData = '';
         if ($rowId) {
-            $rowData = $this->_categoryFactory->create()->load($rowId);
+            $rowData = $this->_categoryFactory->create()->load($rowId,"category_id");
+            // echo "<pre>"; print_r($rowData->debug()); die("dead");
+
             if (!$rowData->getId()) {
                 $this->messageManager->addError(__('row data no longer exist.'));
                 $this->_redirect('adminblog/blog/category');
             }
+            
         }
-        // echo "<pre>"; print_r($rowData->debug()); die("dead");
         $title = $rowId ? __('Edit Review ') : __('Add Review');
         $resultPage->getConfig()->getTitle()->prepend($title);
         return $resultPage;
