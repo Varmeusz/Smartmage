@@ -49,7 +49,6 @@ class PostSave extends \Magento\Backend\App\Action
             $data['updated_at'] = $datenow;
             $data['post_id']  = null;
             $data['publish_at'] = $datenow;
-
         }
         try {
             $model = $this->_postFactory->create();
@@ -69,7 +68,6 @@ class PostSave extends \Magento\Backend\App\Action
                     "category" => $category,
                     "post" => $model["post_id"]
                 ];
-                // print_r($data); die("XD");
                 $postcategoriesmodel = $this->_postCategoriesFactory->create();
                 $postcategoriesmodel->setData($data);
                 $this->_postCategories->save($postcategoriesmodel);
