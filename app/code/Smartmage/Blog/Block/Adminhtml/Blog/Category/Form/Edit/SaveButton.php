@@ -22,5 +22,8 @@ class SaveButton extends GenericButton implements ButtonProviderInterface
             'sort_order' => 90,
         ];
     }
+    public function getSaveUrl() { 
+        return $this->getUrl('*/*/save', []) ; 
+        } 
 }
 

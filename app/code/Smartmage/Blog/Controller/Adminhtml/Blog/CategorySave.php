@@ -27,43 +27,25 @@ class CategorySave extends \Magento\Backend\App\Action
     public function execute()
     {
         $resultRedirect = $this->resultRedirectFactory->create();
-        // $data = $this->getRequest()->getPostValue();
-        $model = $this->_categoryFactory->create();
-        
-            
-        $data = [];
-        $datenow = date('Y-m-d H:i:s');
-        $data['category_id']  = 55;
-        $data['identifier'] = "XD";
-        $data['title'] = "XD2";
-        $data['is_active'] = true;
-        $data['created_at'] = $datenow;
-        $data['updated_at'] = $datenow;
-        $model->setData($data);//->save();
-        $this->category->save($model);
+        try {
+            $data = (array)$this->getRequest()->getPostValue();
+            $model = $this->_categoryFactory->create();
+            $datenow = date('Y-m-d H:i:s');
+            $data['category_id']  = 10;
+            $data['identifier'] = "testidentifier";
+            $data['title'] = "testtitle";
+            $data['is_active'] = true;
+            $data['created_at'] = $datenow;
+            $data['updated_at'] = $datenow;
+            $model->setData($data)->save();
+            print_r($data); die("t");
+            $this->messageManager->addSuccessMessage(__("Data Saved Successfully."));
 
-        // try {
-           
-        //     $model->save();
-            
-        //     $this->messageManager->addSuccessMessage(__('You saved the Category.'));
-        //     $this->dataPersistor->clear('sm_blog_category');
-            
-        //     if ($this->getRequest()->getParam('back')) {
-        //         return $resultRedirect->setPath('*/*/categoryedit', ['category_id' => $model->getId()]);
-        //     }
-        //     return $resultRedirect->setPath('*/*/');
-        // } catch (LocalizedException $e) {
-        //     $this->messageManager->addErrorMessage($e->getMessage());
-        // } catch (\Exception $e) {
-        //     $this->messageManager->addExceptionMessage($e, __('Something went wrong while saving the Sm Blog Post.'));
-        // }
-    
-        return $resultRedirect->setPath('*/*/category', ['id' => $this->getRequest()->getParam('id')]);
-        if ($data) {
-            $id = $this->getRequest()->getParam('id');
-           
+        } catch (\Exception $e) {
+            $this->messageManager->addErrorMessage($e, __("We can\'t submit your request, Please try again."));
         }
+    
+        return $resultRedirect->setPath('*/*/category');
     }
 }
 

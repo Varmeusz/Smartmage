@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
 <argument name="data" xsi:type="array">
-<item name="js_config" xsi:type="array">
-<item name="provider" xsi:type="string">adminblog_blog_categoryedit.adminblog_blog_categoryedit_data_source</item>
-</item>
-<item name="label" xsi:type="string" translate="true">Information</item>
-<item name="config" xsi:type="array">
-<item name="dataScope" xsi:type="string">data</item>
-<item name="namespace" xsi:type="string">adminblog_blog_categoryedit</item>
-</item>
-<item name="template" xsi:type="string">templates/form/collapsible</item>
+    <item name="js_config" xsi:type="array">
+    <item name="provider" xsi:type="string">adminblog_blog_categoryedit.adminblog_blog_categoryedit_data_source</item>
+    </item>
+    <item name="label" xsi:type="string" translate="true">Information</item>
+    <item name="config" xsi:type="array">
+    <item name="dataScope" xsi:type="string">data</item>
+    <item name="namespace" xsi:type="string">adminblog_blog_categoryedit</item>
+    </item>
+    <item name="template" xsi:type="string">templates/form/collapsible</item>
 </argument>
 <settings>
        <buttons>
@@ -50,10 +50,10 @@
         <field name="category_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="visible" xsi:type="boolean">true</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">category</item>
+                    <item name="source" xsi:type="string">adminblog_blog_categoryedit</item>
                 </item>
             </argument>
         </field>
@@ -66,7 +66,7 @@
                     <item name="visible" xsi:type="boolean">true</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">category</item>
+                    <item name="source" xsi:type="string">adminblog_blog_categoryedit</item>
                 </item>
             </argument>
         </field>
@@ -80,7 +80,7 @@
                     <item name="visible" xsi:type="boolean">true</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">category</item>
+                    <item name="source" xsi:type="string">adminblog_blog_categoryedit</item>
                 </item>
             </argument>
         </field>
@@ -93,7 +93,7 @@
                     <item name="visible" xsi:type="boolean">true</item>
                     <item name="dataType" xsi:type="string">boolean</item>
                     <item name="formElement" xsi:type="string">checkbox</item>
-                    <item name="source" xsi:type="string">category</item>
+                    <item name="source" xsi:type="string">adminblog_blog_categoryedit</item>
                 </item>
             </argument>
         </field>
