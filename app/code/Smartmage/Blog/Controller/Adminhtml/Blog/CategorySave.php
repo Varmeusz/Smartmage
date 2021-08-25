@@ -38,7 +38,6 @@ class CategorySave extends \Magento\Backend\App\Action
             $data['created_at'] = $datenow;
             $data['updated_at'] = $datenow;
             $model->setData($data)->save();
-            print_r($data); die("t");
             $this->messageManager->addSuccessMessage(__("Data Saved Successfully."));
 
         } catch (\Exception $e) {
