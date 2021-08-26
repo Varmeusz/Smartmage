@@ -27,6 +27,7 @@ class Blog extends \Magento\Framework\View\Element\Template
     public function getCategories()
     {
         $collection = $this->collectionFactory->create();
+        $collection->addFieldToFilter('is_active', true);
         $collection->setOrder('created_at', 'DESC');
 
         $items = $collection->getItems();

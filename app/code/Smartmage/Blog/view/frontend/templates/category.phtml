@@ -1,0 +1,8 @@
+<h1><?php echo $block->getCategoryTitle(); ?></h1>
+<?php
+$data = $block -> getCategories();
+foreach($data as $item){
+    // echo $data['identifier'];
+    print_r($item);
+}
+?>
