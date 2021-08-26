@@ -33,9 +33,9 @@
        <settings>
            <submitUrl path="adminblog/blog/categorysave"/>
        </settings>
-     <dataProvider class="Smartmage\Blog\Ui\DataProvider\Category\ListingDataProvider" name="adminblog_blog_categoryedit_data_source">
+     <dataProvider class="Smartmage\Blog\Model\Category\DataProvider" name="adminblog_blog_categoryedit_data_source">
            <settings>
-               <requestFieldName>category_id</requestFieldName>
+               <requestFieldName>id</requestFieldName>
                <primaryFieldName>category_id</primaryFieldName>
            </settings>
        </dataProvider>

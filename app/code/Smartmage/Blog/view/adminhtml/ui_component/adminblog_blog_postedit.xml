@@ -96,11 +96,10 @@
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string">Image</item>
                     <item name="visible" xsi:type="boolean">true</item>
-                    <item name="dataType" xsi:type="string">image</item>
+                    <item name="dataType" xsi:type="string">text</item>
                     <item name="formElement" xsi:type="string">image</item>
                     <item name="source" xsi:type="string">adminblog_blog_postedit_data_source</item>
                     <item name="dataScope" xsi:type="string">image</item>
-
                 </item>
             </argument>
         </field>

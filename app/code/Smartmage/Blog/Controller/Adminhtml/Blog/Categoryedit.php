@@ -8,6 +8,7 @@ use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
 use Smartmage\Blog\Model\CategoryFactory;
+use Magento\Framework\App\Request\DataPersistorInterface;
 
 /**
  * Class Post
@@ -23,6 +24,8 @@ class Categoryedit extends Action implements HttpGetActionInterface
     protected $_categoryFactory;
 
     private $coreRegistry;
+    private $dataPersistorInterface;
+
 
     /**
      * Index constructor.
@@ -33,13 +36,15 @@ class Categoryedit extends Action implements HttpGetActionInterface
     public function __construct(
         Context $context,
         PageFactory $resultPageFactory,
-        CategoryFactory $categoryFactory
+        CategoryFactory $categoryFactory,
+        DataPersistorInterface $dataPersistorInterface
 
     ) {
         parent::__construct($context);
         $this->_categoryFactory = $categoryFactory;
         
         $this->resultPageFactory = $resultPageFactory;
+        $this->dataPersistorInterface = $dataPersistorInterface;
     }
 
     /**
@@ -63,6 +68,7 @@ class Categoryedit extends Action implements HttpGetActionInterface
                 $this->messageManager->addError(__('row data no longer exist.'));
                 $this->_redirect('adminblog/blog/category');
             }
+            $this->dataPersistorInterface->set("mycategory", $rowData->toArray());
             
         }
         $title = $rowId ? __('Edit Review ') : __('Add Review');

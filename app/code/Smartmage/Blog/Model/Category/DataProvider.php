@@ -1,9 +1,9 @@
 <?php
-namespace Smartmage\Blog\Model\Post;
+namespace Smartmage\Blog\Model\Category;
 
 use Exception;
 use Magento\Framework\App\Request\DataPersistorInterface;
-use Smartmage\Blog\Model\ResourceModel\Post\CollectionFactory;
+use Smartmage\Blog\Model\ResourceModel\Category\CollectionFactory;
 
 class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 {
@@ -56,14 +56,14 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
         foreach ($items as $model) {
             $this->loadedData[$model->getId()] = $model->getData();
         }
-        $data = $this->dataPersistor->get('mypost');
+        $data = $this->dataPersistor->get('mycategory');
 
         
         if (!empty($data)) {
             $model = $this->collection->getNewEmptyItem();
             $model->setData($data);
             $this->loadedData[$model->getId()] = $model->getData();
-            $this->dataPersistor->clear('mypost');
+            $this->dataPersistor->clear('mycategory');
         }
         // $this->logger->debug(print_r($this->loadedData));
         return $this->loadedData;

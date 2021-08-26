@@ -61,21 +61,24 @@ class PostSave extends \Magento\Backend\App\Action
         }
 
         $categories = $data["categories"];
-        foreach($categories as $category){
-            try {
-                $data = [
-                    "id" => null,
-                    "category" => $category,
-                    "post" => $model["post_id"]
-                ];
-                $postcategoriesmodel = $this->_postCategoriesFactory->create();
-                $postcategoriesmodel->setData($data);
-                $this->_postCategories->save($postcategoriesmodel);
-                $this->messageManager->addSuccessMessage(__("Data Saved Successfully."));
-    
-            } catch (\Exception $e) {
-                $this->messageManager->addErrorMessage($e, __("We can\'t submit your request, Please try again."));
+        if($categories){
+            foreach($categories as $category){
+                try {
+                    $data = [
+                        "id" => null,
+                        "category" => $category,
+                        "post" => $model["post_id"]
+                    ];
+                    $postcategoriesmodel = $this->_postCategoriesFactory->create();
+                    $postcategoriesmodel->setData($data);
+                    $this->_postCategories->save($postcategoriesmodel);
+                    $this->messageManager->addSuccessMessage(__("Data Saved Successfully."));
+        
+                } catch (\Exception $e) {
+                    $this->messageManager->addErrorMessage($e, __("We can\'t submit your request, Please try again."));
+                }
             }
+
         }
     
         return $resultRedirect->setPath('*/*/post');
