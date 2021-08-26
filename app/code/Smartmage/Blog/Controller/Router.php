@@ -63,6 +63,17 @@ class Router implements RouterInterface
             return $this->actionFactory->create(Forward::class, ['request' => $request]);
 
         }
+        if(count($identifierParts) == 3 & $identifierParts[0] == "blog" && $identifierParts[1] == "post" && $identifierParts[2] != "index"){
+
+            $request->setModuleName('blog');
+            $request->setControllerName('post');
+            $request->setActionName('index');
+            $request->setParams([
+                'identifier' => $identifierParts[2]
+            ]);
+            return $this->actionFactory->create(Forward::class, ['request' => $request]);
+
+        }
         
         return null;
     }

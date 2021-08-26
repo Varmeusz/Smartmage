@@ -3,6 +3,6 @@
 $data = $block -> getCategories();
 foreach($data as $item){
     // echo $data['identifier'];
-    print_r($item);
+    echo "<a href=\"".$block->getUrl("blog/post/".$item["identifier"])."\">".$item["title"]."</a><br>";
 }
 ?>

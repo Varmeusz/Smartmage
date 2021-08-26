@@ -150,13 +150,19 @@
                 </item>
             </argument>
         </field>
-</fieldset>
-<fieldset name="categories_form">
-    <settings>
-    <collapsible>false</collapsible>
-    <label>Categories</label>
-    </settings>
-<field name="categories">
+        <field name="publish_time">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Publish time</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit_data_source</item>
+                    <item name="dataScope" xsi:type="string">publish_time</item>
+                </item>
+            </argument>
+        </field>
+        <field name="categories">
 
             <argument name="data" xsi:type="array">
                 <item name="options" xsi:type="object">Smartmage\Blog\Model\Category\Form\Options</item>
@@ -168,22 +174,7 @@
                     <!-- <item name="component" xsi:type="string">Smartmage\Blog\Model\Category\Form\Options</item> -->
                 </item>
             </argument>
-            <!-- <formElements>
-                <multiselect>
-                    <settings>
-                        <options class="Smartmage\Blog\Model\Category\Form\Options"/>
-                    </settings>
-                </multiselect>
-            </formElements> -->
-            
-            <!-- <formElements>
-                <multiselect>
-                    <settings>
-                        <options class="Magento\Cms\Ui\Component\Listing\Column\Cms\Options"/>
-                    </settings>
-                </multiselect>
-            </formElements> -->
         </field>
-
 </fieldset>
+
 </form>

@@ -8,7 +8,7 @@ use Magento\Framework\Pricing\PriceCurrencyInterface;
 use Smartmage\Blog\Model\ResourceModel\Post\CollectionFactory as PostFactory;
 use Smartmage\Blog\Model\ResourceModel\Category\CollectionFactory as CategoryFactory;
 
-class Category extends \Magento\Framework\View\Element\Template
+class Post extends \Magento\Framework\View\Element\Template
 {
 
     protected $postFactory;
@@ -28,16 +28,14 @@ class Category extends \Magento\Framework\View\Element\Template
         parent::__construct($context);
     }
 
-    public function getCategoryTitle(){
-        $categoryId = $this->category->create();
-        $id = $categoryId->getItemByColumnValue('identifier', $this->getRequest()->getParam("identifier"));
-        return $id['title'];
+    public function getPostId(){
+        $postId = $this->postFactory->create();
+        $id = $postId->getItemByColumnValue('identifier', $this->getRequest()->getParam("identifier"));
+        return $id['post_id'];
     }
 
-    public function getCategories()
+    public function getPostContent()
     {
-        $categoryId = $this->category->create();
-        $id = $categoryId->getItemByColumnValue('identifier', $this->getRequest()->getParam("identifier"));
         // $this->logger->log(100,print_r($id->debug())); die("XD");
         // echo($id["category_id"]);
 
@@ -51,8 +49,8 @@ class Category extends \Magento\Framework\View\Element\Template
         // echo $collection->getSelect();
         $datenow = date('Y-m-d H:i:s');
         $collection->addFieldToFilter('is_active', true);
-        $collection->addFieldToFilter('sm_blog_post_category.category', $id["category_id"]);
         $collection->addFieldToFilter('publish_time', ['lt' => $datenow]);
+        $collection->addFieldToFilter('post_id', $this->getPostId());
         $collection->setOrder('created_at', 'DESC');
 
         $items = $collection->getItems();

@@ -1,0 +1,10 @@
+<?php
+echo $block->getRequest()->getParam("identifier");
+$data = $block->getPostContent();
+foreach($data as $item){
+    // print_r($item);
+    echo "<h1>".$item["title"]."</h1>";
+    echo "<img href=\"".$item["image"]."\"/>";
+    echo $item["content"];
+
+}
