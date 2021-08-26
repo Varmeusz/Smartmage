@@ -27,6 +27,8 @@ class Blog extends \Magento\Framework\View\Element\Template
     public function getCategories()
     {
         $collection = $this->collectionFactory->create();
+        $collection->setOrder('created_at', 'DESC');
+
         $items = $collection->getItems();
         $data = [];
         foreach($items as $model){

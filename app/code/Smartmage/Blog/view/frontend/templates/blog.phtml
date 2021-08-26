@@ -1,6 +1,5 @@
 <?php
 $data = $block->getCategories();
 foreach($data as $category){
-    echo "<span>".$category["title"]."</span>";
-    echo "<br>";
+    echo "<a href=\"".$block->getUrl("blog/category/".$category["identifier"])."\">".$category["title"]."</a><br>";
 }
