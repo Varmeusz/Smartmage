@@ -71,12 +71,12 @@ class Actions extends Column
                             'href'  => $this->_context->getUrl($this->_editUrl, ['id' => $item['post_id']]),
                             'target' => '_blank',
                             'label' => __('Edit')
-                        ],
-                        'remove' => [
-                            'href'  => $this->_context->getUrl($this->_deleteUrl, ['id' => $item['post_id']]),
-                            'target' => '_blank',
-                            'label' => __('Delete')
                         ]
+                        // 'remove' => [
+                        //     'href'  => $this->_context->getUrl($this->_deleteUrl, ['id' => $item['post_id']]),
+                        //     'target' => '_blank',
+                        //     'label' => __('Delete')
+                        // ]
 
                     ];
                 }

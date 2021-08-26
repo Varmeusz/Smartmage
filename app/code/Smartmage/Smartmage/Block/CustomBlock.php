@@ -45,11 +45,11 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
 
     public function getSmartmageProductData()
     {
-        $productCount = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_count');
-        $productPrice = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_price');
-        $productImage = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_image');
-        $productImageAlt = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_image_alt');
-        $productImageTitle = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_image_title');
+        $productCount = $this->helper->getConfig('Smartmage_section/Smartmage_product_group/product_count');
+        $productPrice = $this->helper->getConfig('Smartmage_section/Smartmage_product_group/product_price');
+        $productImage = $this->helper->getConfig('Smartmage_section/Smartmage_product_group/product_image');
+        $productImageAlt = $this->helper->getConfig('Smartmage_section/Smartmage_product_group/product_image_alt');
+        $productImageTitle = $this->helper->getConfig('Smartmage_section/Smartmage_product_group/product_image_title');
 
         $productData = array(
             "productCount" => $productCount, 
@@ -73,9 +73,9 @@ class CustomBlock extends \Magento\Framework\View\Element\Template
         '{{table}}.stock_id=1',
         'left');
 
-        $productQtyLimit = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_count');
-        $productPriceLimit = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_price');
-        $productLimit = $this->helper->getConfig('Smartmage-section/Smartmage_product_group/product_limit');
+        $productQtyLimit = $this->helper->getConfig('Smartmage_section/Smartmage_product_group/product_count');
+        $productPriceLimit = $this->helper->getConfig('Smartmage_section/Smartmage_product_group/product_price');
+        $productLimit = $this->helper->getConfig('Smartmage_section/Smartmage_product_group/product_limit');
 
         $productCollection->addAttributeToFilter('price', array('lt' => $productPriceLimit));
         $productCollection->addAttributeToFilter('qty', array('gt' => $productQtyLimit));
