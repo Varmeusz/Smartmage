@@ -13,7 +13,7 @@ class Categorymassdelete extends \Magento\Backend\App\Action
     protected $collectionFactory;
 
 
-    public function __construct(Context $context, Filter $filter, CategoryFactory $collectionFactory)
+    public function __construct(Context $context, Filter $filter, CollectionFactory $collectionFactory)
     {
         parent::__construct($context, $filter);
         $this->filter = $filter;
