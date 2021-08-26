@@ -119,9 +119,10 @@
 				<label translate="true">title</label>
 			</settings>
 		</column>
-		<column name="image">
+		<column name="image" component="Magento_Ui/js/grid/columns/thumbnail" class="Smartmage\Blog\Ui\Component\Post\Form\Column\Thumbnail">
 			<settings>
-				<filter>text</filter>
+				<hasPreview>0</hasPreview>
+            <addField>false</addField>
 				<label translate="true">image</label>
 			</settings>
 		</column>
