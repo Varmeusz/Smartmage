@@ -91,7 +91,7 @@
         </field>
 
         
-        <field name="image">
+        <!-- <field name="image">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string">Image</item>
@@ -101,8 +101,27 @@
                     <item name="source" xsi:type="string">adminblog_blog_postedit_data_source</item>
                     <item name="dataScope" xsi:type="string">image</item>
                 </item>
-            </argument>
+            </argument> -->
             
+        <field name="image">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Image</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="previewTmpl" xsi:type="string">ui/form/element/uploader/preview</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="source" xsi:type="string">adminblog_blog_postedit_data_source</item>
+                    <item name="dataScope" xsi:type="string">image</item>
+                    <item name="allowedExtensions" xsi:type="array">jpg jpeg gif png svg</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="adminblog/blog/tmpupload"/>
+                    </item>
+                    <item name="notice" xsi:type="string"><![CDATA[Allowed file types: jpg, jpeg, png.]]></item>
+                </item>
+            </argument>
+        </field>
             <!-- <formElements>
                 <imageUploader>
                     <settings>
@@ -114,7 +133,6 @@
                     </settings>
                 </imageUploader>
             </formElements> -->
-        </field>
 
         
         <field name="content">
@@ -188,5 +206,4 @@
             </argument>
         </field>
 </fieldset>
-
 </form>
