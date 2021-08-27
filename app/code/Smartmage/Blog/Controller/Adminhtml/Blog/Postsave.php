@@ -37,7 +37,7 @@ class PostSave extends \Magento\Backend\App\Action
         $resultRedirect = $this->resultRedirectFactory->create();
         $postId = $this->getRequest()->getParam('id');
         $data = (array)$this->getRequest()->getPostValue();
-        print_r($data); die("XD");
+        // print_r($data); die("XD");
         $datenow = date('Y-m-d H:i:s');
         if($postId){
             $data['post_id'] = $postId;
@@ -50,6 +50,10 @@ class PostSave extends \Magento\Backend\App\Action
             $data['post_id']  = null;
             $data['publish_at'] = $datenow;
         }
+        if($data['image']){
+            $data['image'] = $data['image'][0]['name'];
+        }
+        // print_r($data); die("");
         try {
             $model = $this->_postFactory->create();
             $model->setData($data);

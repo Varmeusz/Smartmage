@@ -35,6 +35,10 @@ class Tmpupload extends \Magento\Backend\App\Action
         //    $this->imageUploader->setBaseTmpPath("test/tmp");
         //    $this->imageUploader->setAllowedExtensions(["jpg","jpeg", "png"]);
            $result = $this->imageUploader->saveFileToTmpDir($imageId);
+           $this->logger->log(500, print_r($result, true));
+           //TODO:
+           //set result in session
+           //use session in postsave.php
 
        } catch (Exception $e) {
            $result = ['error' => $e->getMessage(), 'errorcode' => $e->getCode()];
